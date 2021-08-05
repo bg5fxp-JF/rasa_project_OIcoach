@@ -1,0 +1,43 @@
+language: en
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+#  - name: SpacyNLP
+#  - name: SpacyTokenizer
+#  - name: SpacyFeaturizer
+#  - name: RegexFeaturizer
+#  - name: LexicalSyntacticFeaturizer
+#  - name: CountVectorsFeaturizer
+#  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 100
+#  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    retrieval_intent: out_of_scope
+    scale_loss: false
+    epochs: 100
+  - name: ResponseSelector
+    retrieval_intent: chitchat
+    scale_loss: false
+    epochs: 100
+  - name: FallbackClassifier
+    threshold: 0.5
+policies:
+  - name: MemoizationPolicy
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
+  - name: RulePolicy
+#  - name: MemoizationPolicy
+#  - name: RulePolicy
+#  - name: TEDPolicy
+#    max_history: 5
+#    epochs: 100
+#    constrain_similarities: true

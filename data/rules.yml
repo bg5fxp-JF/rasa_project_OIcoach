@@ -1,0 +1,83 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: name already filled greeting
+  condition:
+  - slot_was_set:
+    - first_name: jacob
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: email already filled
+  condition:
+  - slot_was_set:
+    - email: jf@example.com
+  steps:
+  - intent: subscribe_to_updates
+  - action: utter_already_sub
+
+- rule: reply to whenever user says thank you
+  steps:
+  - intent: thankyou
+  - action: utter_youre_welcome
+
+- rule: whenever user needs a reminder of what is offered
+  steps:
+    - intent: need_help
+    - action: utter_help
+
+- rule: deny ask name
+  steps:
+  - action: utter_ask_permission
+  - intent: deny
+  - action: utter_submit_no_name
+  - action: utter_ask_signup
+
+- rule: no name sign up story affirm
+  steps:
+  - action: utter_ask_signup
+  - intent: affirm
+  - action: utter_inform_affirm
+  - action: utter_help
+
+- rule: out-of-scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+  - action: utter_help
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_out_of_scope
+  - action: utter_help
+
+
+- rule: chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+
+#
+#- rule: Submit name_form2
+#  condition:
+#  - active_loop: name_form
+#  steps:
+#  - action: name_form
+#  - active_loop: name_form
+#  - slot_was_set:
+#    - requested_slot: first_name
+#  - slot_was_set:
+#    - first_name: jac
+#  - slot_was_set:
+#    - requested_slot: null
+#  - active_loop: null
+#  - action: utter_submit
+#  - action: validate_name_form

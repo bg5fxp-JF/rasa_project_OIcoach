@@ -1,0 +1,523 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hey!
+    - Hallo
+    - hello
+    - Good day
+    - Good morning
+    - yo
+    - Howdy!
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hi
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - correct
+    - sure
+    - ok
+    - why not
+    - ok great
+    - yes, i am
+    - yeah great
+    - yh
+    - yes that's good
+    - fine
+    - i sure am
+    - you bet
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - absolutely not
+    - i didn't
+    - nope
+    - sadly not
+    - didn't do any
+    - could have been better
+    - not great
+    - I don't want to give my name
+    - I'm not comfortable with giving you my name
+    - I'm not comfortable with giving my name out
+    - i don't have to
+    - i don't want to
+    - nah allow it
+    - i dont want to give my name
+    - i dont my name to be given
+    - Why?
+    - why do you want to know my name?
+    - why is that?
+    - why do you need my name
+    - why would you like to know my name?
+    - no thanks
+    - no thank you
+    - NO thank you though
+    - no maybe next time
+    - maybe another time
+    - not today
+    - some other time thanks
+    - some other time
+    - why do you ask
+- intent: mood_great
+  examples: |
+    - i am happy
+    - i don't feel bad
+    - perfect
+    - nice
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - i am happy now
+    - I'm no longer sad
+    - I feel goooood
+    - i feel alright
+    - i fell fine
+    - I'm fine
+    - I feel Good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - i want you to make me feel better
+    - make me feel better
+    - i'm sad make me feel good
+    - cheer me up
+    - feeling down right now
+    - not feeling way
+    - having a really bad day
+    - having a smelly day today
+    - today sucks
+    - this day stinks
+    - today was terrible
+    - thanks for helping but I still feel terrible can you make me feel better?
+    - I don't feel so well
+    - I am sad
+    - can you cheer me up?
+    - i feeling down
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - im not happy
+    - so saad
+    - so sad
+    - can you make me feel better?
+    - can you make me happy?
+- intent: request_names
+  examples: |
+    - do you know my name?
+    - do you remember my name?
+    - whats my name?
+    - what is my name?
+    - remember my name?
+    - who am i?
+    - who am I
+    - how am i called
+    - Can you tell me my name?
+    - Can you tell me what I am called?
+    - Do I have a name?
+    - Do I have a name? What is it?
+    - Do you know my name?
+    - Do you know what my name is?
+    - Explain my name to me.
+    - I have a name, what is it?
+    - I'd like to know my name
+    - I'd like to know what my name is
+    - Inform me what my name is
+    - May i know my name?
+    - Please let me know what my name is
+    - Say my name.
+    - Tell me my name
+    - Tell me my name.
+    - What am I called?
+    - What could be my name?
+    - What did my parents name me?
+    - What do I call myself?
+    - What do my colleagues call me?
+    - What do people call me?
+    - What does everyone call me?
+    - What else do people call me?
+    - What exactly is my name?
+    - What is my first name?
+    - What is my full name?
+    - What is my name?
+    - What is the name I was given?
+    - What name do I go by?
+    - What name should I recognize for myself?
+    - What was I named?
+    - What would be the name on my tombstone?
+    - can you tell me my name?
+    - what is my name
+    - what's my name?
+    - whats my name
+- intent: subscribe_to_updates
+  examples: |
+    - I would like to subscribe to updates
+    - i would like to subscribe
+    - can i subscribe to your updates
+    - can i sub?
+    - Can I be on your mailing list?
+    - The tool looks interesting, I would like to be subscribed for updates please
+    - How can I subscribe?
+    - i want to subscribe
+    - I now want to subscribe
+    - Hmmm i think I want to subscribe
+    - I think i now wnat to subscribe
+    - let me subscribe
+    - Nice, the next thing i want to do now is subscribe to updates
+    - I wunna sub
+    - I wunna sub to your mailing list
+    - I would like to sub to your updates por favor
+    - subscribtion please
+    - Great that was funny on a serious note i would like to subscribe
+    - haha yh I want to subscribe now though
+    - thanks for that but nnow I want to subscribe
+    - i want to sub, thanking you ina advance
+    - that helped , i think i want to subscribe now ... yoou think you can do that for me?
+- intent: thankyou
+  examples: |
+    - Thanks for helping😊
+    - Thank you!
+    - thank you!!!
+    - Thanks
+    - thank you for helping me today
+    - thank you
+    - thanks bro
+    - thank you mrs bot
+    - thank you mr Bot
+    - Thanks! OI
+    - I appreciate that
+    - I Thank You
+    - Thanking youuuu
+    - THankknknsss
+    - that was helpful
+    - Thanks that was helpful
+    - thaT was helpful thanks
+    - Very helpful
+    - i am grateful for that
+    - Thanks i'm grateful
+- intent: ask_course
+  examples: |
+    - what courses do you offer?
+    - i want to find a course
+    - courses
+    - what courses are there
+    - what courses can i take
+    - what are the subjects
+    - whats are the offers for couses?
+    - i want to get better
+    - i want to learn, what do you suggest?
+    - can I have ciurse suggstions
+    - give me a course suggestion
+    - i request for a course suggestion
+    - I request to see what courses can be offered to me
+    - I Wan to seee the courses that are available
+    - i want to improve
+    - what courses can i search for?
+    - what subjects do you provide courses for
+    - how many subjects are there?
+    - I want to search for courses
+    - Do you offer courses on Maths?
+    - Do you offer courses on Mathematics?
+    - Do you offer courses to do with Arts & Humanities?
+    - Is Computer Science part of the course you offer searches on?
+    - Do you have courses in Health
+    - I'm interseted in Social Science
+    - Do you offer searches for courses to do with business
+    - Any courses in Engineering & Science
+    - Do you offer courses on Engineering and Science?
+- intent: ask_learning_type
+  examples: |
+    - what is my learning type?
+    - i'd like to take the learning test
+    - I want to see how I can learn best
+    - learning test
+    - learning type
+    - what's the best way i can learn
+    - I'm not sure on what to learn, could you maybe help me understand which path to take?
+    - what learner am I?
+    - I request for a learning test
+    - What type of learner am I
+    - can you tell me what learner I am
+    - can you suggest a learning test
+    - Can you suggest what learning method is best for me
+    - How can i learn best
+    - learner am I wht?
+    - wht learner am i bro
+    - ok i now want to see what learner I am. can you do that for me?
+    - cool, now tell me what learner I am
+    - great now can i have a learner test
+    - thanks. I think I want to take a learner test
+- intent: visual
+  examples: |
+    - i am a visual
+    - visual
+    - I definitely learn things visually best!
+- intent: aural
+  examples: |
+    - i am a aural
+    - aural
+- intent: read_write_learner
+  examples: |
+    - i am a read/write
+    - read/write
+- intent: kinesthetic
+  examples: |
+    - i am a Kinesthetic
+    - Kinesthetic
+- intent: need_help
+  examples: |
+    - what do you offer again?
+    - why am i here?
+    - what do you offer?
+    - can you help?
+    - need help
+    - help
+    - Help Please!
+    - what do you do?
+    - Can you explain me in one sentence what you are doing?
+    - Can you help me?
+    - Could you please show me what you can
+    - Great, is there anything else you can do, bot?
+    - How can you help me
+    - How you help me?
+    - I need help
+    - I need some help
+    - What are my options
+    - What are you able to do?
+    - What can I ask you?
+    - What can I do?
+    - What can you demo
+    - What can you do
+    - What can you do for me?
+    - What can you do?
+    - What can you tell me?
+    - What do you do
+    - anything els
+    - are there any other options?
+    - can I ask you anything else?
+    - can you do anything else?
+    - can you help me
+    - can you help me?
+    - come back
+    - cool! can I do something else here?
+    - hello what can you do for me
+    - help me
+    - help please
+    - help pls
+    - help?
+    - hep me
+    - hm that doesnt quite help me is there anything else you can do?
+    - how can i use you
+    - how can you help me
+    - how can you help me?
+    - how can you help?
+    - how does this work?
+    - how u can help me
+    - how you help me
+    - i asked you if you can do anything else
+    - i don't know what i want
+    - i need help
+    - more info
+    - now what?
+    - options
+    - show me the menu
+    - show me what's possible
+    - so now what
+    - so what can you do
+    - so what can you do?
+    - so what can you help me with?
+    - so what next?
+    - talk to me
+    - talk to me!
+    - tell me something you can do
+    - tell me what's your skill
+    - um what now
+    - what are all the things you understand?
+    - what are the options?
+    - what are you ding
+    - what are you doing
+    - what are you good at?
+    - what can I ask ?
+    - what can I ask you?
+    - what can I do here
+    - what can I do with this bot
+    - what can i do here
+    - what can i do now
+    - what can u do
+    - what can we talk about?
+    - what can you answer
+    - what can you do
+    - what can you do for me
+    - what can you do?
+    - what can you offer me?
+    - what can you tell me
+    - what can you?
+    - what cn u do for me ?
+    - what do you do
+    - what do you know except this?
+    - what else can I do here?
+    - what else can i do
+    - what else can i do?
+    - what else can you do?
+    - what else can you help with?
+    - what i have to do
+    - what is this bot for
+    - what u can do
+    - what u can do?
+    - what you can do
+    - what you can do for me?
+    - what you can do?
+    - what you do
+    - what you doing?
+    - what you talk about?
+    - you can hep me
+    - what can you teache me?
+    - Can rasa do calculations?
+    - what you can
+- intent: inform
+  examples: |
+    - my name is [jacob](first_name)
+    - [jaco](first_name)
+    - [Jacob](first_name)
+    - [munzer](first_name) is the name
+    - you can call me [ciariam](first_name) if you want
+    - people call me [John](first_name)
+    - I go by the name [Sally](first_name)
+    - I am named [Sarah](first_name)
+    - [Joe smith](first_name)
+    - [alex sandro](first_name)
+    - [Jacob Fecunda](first_name)
+    - my email is [jf@example.com](email)
+    - email is [jacob@example.com](email)
+    - [email@fakeemail.com](email)
+    - This is my email [cool@gmail.com](email)
+    - I'd like to subscribe using [jfjf@outlook.com](email)
+    - [jacob](first_name)
+    - [hfjksdlhfjklsd](email)
+    - [thismyemail.com](email)
+    - [hjdfska.com](email)
+    - [dhHJK.co.uk](email)
+    - my email is [bss.com.dbam.com](email)
+    - [com.dbas](email)
+    - [jj](first_name)
+    - my name is [oi](first_name)
+    - [jf@exampe.com](email)
+    - my name be [jbob](first_name)
+    - my naem is [cooolj](first_name)
+    - you can call me [jacob](first_name)
+    - the name is [deno](first_name)
+    - [denis](first_name)
+    - my name is [coolboy](first_name)
+- intent: give_time
+  examples: |
+    - can you tell me what time it is
+    - tell me the time
+    - got the time
+    - what time is it
+    - whats the time?
+    - can you tell me what is the time
+    - i want the time
+    - what is the time
+    - i want to know what the time is
+    - can i have the time please?
+    - what's the date?
+    - whats the date and time
+    - can you tell me what the date is today
+    - what day is it today
+    - whats todays date
+    - date and time please
+    - ⏱
+    - 🕐
+    - 🕖
+    - ⏰
+    - ⌚️
+    - Can you give me the time?
+    - Can you tell me the time?
+    - Can you tell me what time it is?
+    - Can you tell the time?
+    - Could you tell me the time, please?
+    - Could you tell me the time?
+    - Could you tell me what time is it?
+    - Do you have the time?
+    - Do you know the time?
+    - Do you know what time it is?
+    - Excuse me, what time is it?
+    - Give me the time.
+    - Hi, I need the time.
+    - I need to know what time it is.
+    - Pardon me, but do you know the time?
+    - Tell me the time.
+    - Time, please!
+    - Time?
+    - What is the current time?
+    - What is the exact time?
+    - What is the hour and minute right now?
+    - What is the time?
+    - What might the time be?
+    - What time do we have?
+    - What time have we got?
+    - What time is it right now?
+    - What's the current time?
+    - What's the time right now?
+    - What's the time?
+    - Would you tell me what time it is?
+    - do you have the time?
+    - do you know the current time?
+    - tell me the current time.
+    - tell me the time it is.
+    - tell me the time.
+    - tell me what time you have.
+    - that's true. do you know what time it is?
+    - what is the current time?
+    - what is the time ?
+    - what is the time?
+    - what time do you have?
+    - what time is it?
+    - what time it is
+    - what's the time
+    - whats the time now

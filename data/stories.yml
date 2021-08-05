@@ -1,0 +1,405 @@
+version: "2.0"
+
+stories:
+- story: happy path
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_sorry
+
+- story: interactive_story_1_deny
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_permission
+  - intent: affirm
+  - action: utter_ask_name
+  - intent: inform
+  - active_loop: name_form
+  - slot_was_set:
+    - first_name: jacob
+  - slot_was_set:
+    - first_name: jacob
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: validate_name_form
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_slots_values
+  - action: utter_ask_signup
+  - intent: deny
+  - action: utter_inform_name_given
+
+- story: interactive_story_1_affirm
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_permission
+  - intent: affirm
+  - action: utter_ask_name
+  - intent: inform
+  - active_loop: name_form
+  - slot_was_set:
+    - first_name: jacob
+  - slot_was_set:
+    - first_name: jacob
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: validate_name_form
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_slots_values
+  - action: utter_ask_signup
+  - intent: affirm
+  - action: utter_inform_affirm
+  - action: utter_help
+
+- story: Submit_email_form
+  steps:
+  - intent: subscribe_to_updates
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: my@example.com
+  - slot_was_set:
+    - email: my@example.com
+  - action: utter_submit
+  - action: validate_email_form
+
+
+- story: Subrscribed to updates
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_permission
+  - intent: affirm
+  - action: utter_ask_name
+  - intent: inform
+  - active_loop: name_form
+  - slot_was_set:
+    - first_name: jacob
+  - slot_was_set:
+    - first_name: jacob
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: validate_name_form
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_slots_values
+  - action: utter_ask_signup
+  - intent: affirm
+  - action: utter_inform_affirm
+  - action: utter_help
+  - intent: subscribe_to_updates
+  - action: utter_ask_email
+  - intent: inform
+    entities:
+    - email: my@example.com
+  - slot_was_set:
+    - email: my@example.com
+  - action: utter_submit
+  - action: validate_email_form
+
+
+- story: aural learner
+  steps:
+  - intent: ask_learning_type
+  - action: utter_give_questionnaire
+  - action: utter_choose_learner_type
+  - intent: aural
+  - action: utter_aural
+
+
+- story: visual learner
+  steps:
+  - intent: ask_learning_type
+  - action: utter_give_questionnaire
+  - action: utter_choose_learner_type
+  - intent: visual
+  - action: utter_visual
+
+
+- story: read/write learner
+  steps:
+  - intent: ask_learning_type
+  - action: utter_give_questionnaire
+  - action: utter_choose_learner_type
+  - intent: read_write_learner
+  - action: utter_read_write
+
+
+- story: kinesthetic learner
+  steps:
+  - intent: ask_learning_type
+  - action: utter_give_questionnaire
+  - action: utter_choose_learner_type
+  - intent: kinesthetic
+  - action: utter_kinesthetic
+
+
+- story: ask course story
+  steps:
+  - intent: ask_course
+  - action: utter_inform_course
+
+
+
+#- story: name already filled 1
+#  steps:
+#  - intent: inform
+#  - action: utter_name_already_given
+#  - intent: affirm
+#  - action: utter_ask_name
+#  - intent: inform
+#    entities:
+#    - first_name: jacob
+#  - slot_was_set:
+#    - first_name: jacob
+#  - action: utter_submit
+#  - action: validate_name_form
+#  - slot_was_set:
+#    - requested_slot: null
+#  - action: utter_slots_values
+#
+#
+#- story: name already filled 2
+#  steps:
+#  - intent: inform
+#  - action: utter_name_already_given
+#  - intent: deny
+#  - action: utter_submit
+
+- story: no name sign up story deny
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_permission
+  - intent: deny
+  - action: utter_submit_no_name
+  - action: utter_ask_signup
+  - intent: deny
+  - action: utter_inform_no_name
+
+- story: no name sign up story affirm
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_permission
+  - intent: deny
+  - action: utter_submit_no_name
+  - action: utter_ask_signup
+  - intent: affirm
+  - action: utter_inform_affirm
+  - action: utter_help
+
+- story: path about time
+  steps:
+  - intent: give_time
+  - action: action_show_time
+
+
+#- story: when ever user asks for their name and name is null
+#  steps:
+#  - intent: inform
+#  - action: name_form
+#  - active_loop: name_form
+#  - active_loop: null
+#  - action: utter_submit
+#  - action: validate_name_form
+#  - slot_was_set:
+#    - requested_slot: null
+#  - action: utter_slots_values
+#  -
+
+
+- story: story name 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_permission
+  - intent: affirm
+  - action: utter_ask_name
+  - intent: inform
+  - active_loop: name_form
+  - slot_was_set:
+    - first_name: jacob
+  - slot_was_set:
+    - first_name: jacob
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: validate_name_form
+  - action: utter_slots_values
+  - action: utter_ask_signup
+
+- story: story name 2
+  steps:
+  - intent: inform
+  - active_loop: name_form
+  - slot_was_set:
+    - first_name: jacob
+  - slot_was_set:
+    - first_name: jacob
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: validate_name_form
+  - action: utter_slots_values
+  - action: utter_ask_signup
+
+
+- story: invalid name
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_permission
+  - intent: affirm
+  - action: utter_ask_name
+  - intent: inform
+    entities:
+    - first_name: jj
+  - slot_was_set:
+    - first_name: jj
+  - action: utter_submit
+  - action: validate_name_form
+
+- story: when ever user asks for their name
+  steps:
+  - intent: request_names
+  - action: check_name_filled
+  - intent: deny
+  - action: utter_submit_no_name
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_permission
+  - intent: affirm
+  - action: utter_ask_name
+  - intent: inform
+    entities:
+    - first_name: jacob
+  - slot_was_set:
+    - first_name: jacob
+  - action: utter_submit
+  - action: validate_name_form
+  - action: utter_slots_values
+  - action: utter_ask_signup
+
+- story: interactive_story_1
+  steps:
+  - intent: request_names
+  - action: check_name_filled
+  - intent: affirm
+  - action: utter_ask_name
+  - intent: inform
+    entities:
+    - first_name: jbob
+  - slot_was_set:
+    - first_name: jbob
+  - action: utter_submit
+  - action: validate_name_form
+  - action: utter_slots_values
+  - action: utter_ask_signup
+#- story: interactive_story_1
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - action: utter_ask_permission
+#  - intent: affirm
+#  - action: utter_ask_name
+#  - intent: inform
+#    entities:
+#    - first_name: cooolj
+#  - slot_was_set:
+#    - first_name: cooolj
+#  - action: utter_submit
+#  - action: validate_name_form
+#  - action: utter_slots_values
+#  - action: utter_ask_signup
+#  - intent: deny
+#  - action: utter_inform_name_given
+#  - intent: inform
+#    entities:
+#    - first_name: jacob
+#  - slot_was_set:
+#    - first_name: jacob
+#  - action: change_name_filled
+#  - intent: affirm
+#  - action: utter_ask_name
+#  - intent: inform
+#    entities:
+#    - first_name: jacob
+#  - slot_was_set:
+#    - first_name: jacob
+#  - action: utter_submit
+#  - action: validate_name_form
+#  - action: utter_slots_values
+#
+#- story: interactive_story_1
+#  steps:
+#  - intent: request_names
+#  - action: check_name_filled
+#  - intent: affirm
+#  - action: utter_ask_name
+#  - intent: inform
+#    entities:
+#    - first_name: deno
+#  - slot_was_set:
+#    - first_name: deno
+#  - action: utter_submit
+#  - action: validate_name_form
+#  - action: utter_slots_values
+#  - action: utter_ask_signup
+#  - intent: affirm
+#  - action: utter_inform_affirm
+#  - action: utter_help
+#  - intent: inform
+#    entities:
+#    - first_name: denis
+#  - slot_was_set:
+#    - first_name: denis
+#  - action: change_name_filled
+#  - intent: deny
+#  - action: utter_submit_no_name
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_permission
+  - intent: affirm
+  - action: utter_ask_name
+  - intent: inform
+    entities:
+    - first_name: coolboy
+  - slot_was_set:
+    - first_name: coolboy
+  - action: utter_submit
+  - action: validate_name_form
+  - action: utter_slots_values
+  - action: utter_ask_signup
