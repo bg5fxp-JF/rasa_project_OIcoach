@@ -3,13 +3,15 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- chitchat:
+    is_retrieval_intent: true
+- advice:
+    is_retrieval_intent: true
+- out_of_scope:
+    is_retrieval_intent: true
 - greet
 - inform
 - affirm
-- out_of_scope:
-    is_retrieval_intent: true
-- chitchat:
-    is_retrieval_intent: true
 - request_names
 - deny
 - give_time
@@ -17,17 +19,24 @@ intents:
 - thankyou
 - read_write_learner
 - ask_learning_type
-- kinesthetic
-- visual
-- aural
+- realistic
+- investigative
+- artistic
+- social
+- enterprising
+- conventional
 - ask_course
 - goodbye
 - mood_great
 - mood_unhappy
 - need_help
+- set_goals
 entities:
 - email
 - first_name
+- exercise
+- sleep
+- stress
 slots:
   first_name:
     type: text
@@ -38,7 +47,56 @@ slots:
   requested_slot:
     type: text
     influence_conversation: true
+  confirm_exercise:
+    type: bool
+    influence_conversation: false
+  exercise:
+    type: text
+    influence_conversation: false
+  sleep:
+    type: text
+    influence_conversation: false
+  diet:
+    type: text
+    influence_conversation: false
+  stress:
+    type: text
+    influence_conversation: false
+  goal:
+    type: text
+    influence_conversation: false
 responses:
+  utter_advice/study_tips:
+  - text: |-
+      Here are my top 10 tips for studying:
+
+      1. Pick a place and time
+      2. Study every day
+      3. Plan your time
+      4. Discover your learning style
+      5. Review and revise
+      6. Take breaks
+      7. Ask for help
+      8. Stay motivated
+      9. App it up
+      10. Look after yourself
+  utter_advice/procrastination_tips:
+  - text: |-
+      To combat procrastination I say you should:
+
+      1. Be brutally honest about your priorities.
+      2. Stop feeling guilty.
+      3. Change how you describe yourself.
+      4. Build systems to accomplish goals.
+      5. Reward yourself for your work.
+  utter_advice/podcast_suggestion:
+  - text: This is the best audio series I know 😎 https://www.listennotes.com/podcasts/otermans-institute-audio-lessons-otermans-PN64gYwoDVf/
+  utter_advice/cv_writing:
+  - text: This is one of our audio lessons on CV Writing https://lnns.co/E724ObAgTxS
+  utter_advice/general:
+  - text: Sure what sort of advice?
+  utter_advice/irrelevant:
+  - text: Ohh.. can't say thats my strong suit. Im not that kind of coach😂 How about some advice about studying?
   utter_out_of_scope/non_english:
   - text: I only understand English, I'm sorry.
   - text: At this moment I only understand English ☹️
@@ -55,15 +113,15 @@ responses:
   - text: I was made by software engineers, but hard work is what built me.
   - text: I'm building myself every day. I've been working out, did you notice?
   utter_chitchat/who_made_you:
-  - text: I was created by Ciaram, Munzer & Jacob! 🧠
+  - text: I was created by Munzer & Jacob! 🧠
   utter_chitchat/ask_isbot:
   - text: Yep, I'm a bot!
   - text: Yes, I'm a bot.
   - text: Yep, you guessed it, I'm a bot!
   - text: I am indeed a bot 🤖
-  - text: Yes, I am haha. I am OI's search tool bot 🤖 here to help with any queries 😃
+  - text: Yes, I am haha.
   utter_chitchat/ask_ishuman:
-  - text: I'm not a human, I'm a bot! 🤖 I am OI's search tool bot 🤖 here to help with any queries 😃
+  - text: I'm not a human, I'm a bot! 🤖
   utter_chitchat/ask_languagesbot:
   - text: I can spell baguette in French, but unfortunately English is the only language I can answer you in.
   - text: I am in the process of learning, but at the moment I can only speak English.
@@ -81,7 +139,7 @@ responses:
   - text: Who do you think you are?
   - text: Unfortunately I haven't been programmed with the amount of necessary philosophy knowledge to answer that.
   utter_chitchat/ask_whoisit:
-  - text: I am OI's search tool bot 🤖 here to help with any queries 😃
+  - text: I am Otto 🦦 your coach bot 🤖 here to help you be the best version of you
   utter_chitchat/how_are_you:
   - text: I'm doing pretty allright thanks!
   - text: Soooo tired! A lot of people to deal with, not easy being a bot you know! 😉
@@ -109,8 +167,14 @@ responses:
   - text: What do you call a pirate droid? - Arrrr-2-D2
   - text: Why did the robot cross the road? - Because he was programmed to.
   - text: Not really a joke...but if you say Space Ghettos in an American accent, it sounds exactly the same as Spice Girls in a Scottish accent (vice versa). Try it 😂
+  utter_chitchat/compliment:
+  - text: Why thank you 😌
+  - text: Thanks!
+  - text: Ohh stop it...😅
+  - text: Thank you
+  - text: I know 😁
   utter_greet:
-  - text: Hello! Welcome to Otermans Institute’s Course Selector Tool. I am a Digital Assistant and my goal is to help you find the course that best suits you.
+  - text: Hello! I am Otto 🦦 your coach bot 🤖 here to help you be the best version of you.
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
@@ -132,12 +196,8 @@ responses:
   - text: Nice.
   utter_submit_no_name:
   - text: Ok. No worries, that is absolutely fine 😅
-  utter_slots_values:
+  utter_name_value:
   - text: I will remember that your name is {first_name}!
-  utter_ask_signup:
-  - text: Would you like to register for an account for FREE and get a better recommendation?
-  utter_already_sub:
-  - text: You have already subscribed
   utter_name_already_given:
   - buttons:
     - payload: /affirm
@@ -148,7 +208,7 @@ responses:
   utter_inform_name_given:
   - buttons:
     - payload: /subscribe_to_updates
-      title: Subscribe for Course Updates
+      title: Subscribe for Goal notifications
     - payload: /ask_course
       title: Search for Courses
     - payload: /ask_learning_type
@@ -170,24 +230,14 @@ responses:
   - text: Enter you email address please 📧
   - text: What's your email?
   utter_subscribed:
-  - text: Check your inbox at {email} in order to finish subscribing to OI's course updates! ✅
+  - text: Check your inbox at {email} ✅
   utter_help:
   - buttons:
-    - payload: /subscribe_to_updates
-      title: Subscribe for Course Updates
+    - payload: /set_goals
+      title: Set Goals
     - payload: /ask_course
-      title: Search for Courses
-    - payload: /ask_learning_type
-      title: Take a learner test
-    text: "How can I help? Here's what I can offer:"
-  - buttons:
-    - payload: /subscribe_to_updates
-      title: Subscribe for Course Updates
-    - payload: /ask_course
-      title: Search for Courses
-    - payload: /ask_learning_type
-      title: Take a learner test
-    text: "Is there anything else I can do? Here's what I can offer:"
+      title: Search For Courses
+    text: "Here's somethings I can offer:"
   utter_youre_welcome:
   - text: You're welcome!
   - text: Happy to help 😃
@@ -196,77 +246,271 @@ responses:
   - text: 😉
   - text: 👍
   - text: 🦾
+  utter_start_message:
+  - buttons:
+    - payload: /affirm
+      title: Yes
+    - payload: /deny
+      title: No
+    text: Should we start off with understanding what type of personality you are so I can cater my coahcing to your style?
+  utter_rules:
+  - text: |-
+      Ok a few rules. I'm going to ask a few questions each relating to different personality types.
+      For each question that you feels applies to you add a mark.
+      At the end you'll have a mark out of 18 for each personality type.
+      The mark that you score the highest will be the personality type you relate to most.
+      Ok let's begin.
+  utter_realistic_questions:
+  - text: |-
+      The following questions are for Realistic
+
+      Are you:
+      - practical
+      - athletic
+      - straightforward
+      - mechanically inclined
+      - a nature lover
+      - curious about the physical world?
+      Can you:
+      - fix electrical things
+      - solve mechanical problems
+      - pitch a tent
+      - play a sport
+      - read a blueprint
+      - operate tools and machinery?
+      Do you like to:
+      - tinker with machines
+      - work outdoors
+      - be physically active
+      - work with your hands
+      - build things
+      - work on cars?
+  utter_investigative_questions:
+  - text: |-
+      The following questions are for Investigative
+
+      Are you:
+      - inquisitive
+      - analytical
+      - scientific
+      - observant
+      - logical
+      - precise?
+      Can you:
+      - think abstractly
+      - solve math problems
+      - understand physics theories
+      - do complex calculations
+      - use a microscope
+      - interpret formulas?
+      Do you like to:
+      - explore ideas
+      - use computers
+      - work independently
+      - perform lab experiments
+      - read scientific or technical magazines
+      - analyse data?
+  utter_artistic_questions:
+  - text: |-
+      The following questions are for Artistic
+
+      Are you:
+      - creative
+      - intuitive
+      - imaginative
+      - innovative
+      - sensitive
+      - an individualist?
+      Can you:
+      - sketch, draw, paint
+      - use intuition
+      - play a musical instrument
+      - write stories, poetry, music
+      - develop new ideas, approaches
+      - design fashions or interiors?
+      Do you like to:
+      - solve problems in original ways
+      - read fiction, plays, poetry
+      - use verbal abilities to speak, act, entertain
+      - take photographs
+      - use visualization abilities
+      - express yourself creatively?
+  utter_social_questions:
+  - text: |-
+      The following questions are for Social
+
+      Are you:
+      - friendly
+      - helpful
+      - idealistic
+      - insightful about people
+      - outgoing with others
+      - understanding?
+      Can you:
+      - teach or train others
+      - express your feelings clearly
+      - lead a group discussion
+      - mediate disputes
+      - cooperate well with others
+      - work well in groups or teams?
+      Do You Like To:
+      - use social and interpersonal skills
+      - help people with their problems
+      - lead groups
+      - use communication skills
+      - teach or train others
+      - provide support, empathy?
+  utter_enteprising_questions:
+  - text: |-
+      The following questions are for Enterprising
+
+      Are you:
+      - self-confident
+      - assertive
+      - sociable
+      - persuasive
+      - enthusiastic
+      - energetic?
+      Can you:
+      - initiate projects
+      - convince people to do things
+      your way
+      - sell things or promote ideas
+      - give talks or speeches
+      - organize activities and events
+      - lead a group?
+      Do You Like To:
+      - make decisions affecting others
+      - use energy or drive
+      - give speeches or talks
+      - use skills in argument or debate
+      - take risks
+      - organize and lead others?
+  utter_conventional_questions:
+  - text: |-
+      The following questions are for Conventional
+
+      Are you:
+      - well-organized
+      - accurate with details and numbers
+      - interested in number crunching
+      - methodical
+      - conscientious about facts
+      - efficient?
+      Can you:
+      - work well within an authority
+      system or organization
+      - write reports
+      - keep accurate records
+      - use a computer terminal
+      - perform calculations
+      - gather, organize and report data?
+      Do You Like To:
+      - follow defined procedures
+      - make charts, tables and graphs
+      - work with numbers
+      - type or do word processing
+      - classify and organize information
+      - be responsible for details?
+  utter_ask_score:
+  - buttons:
+    - payload: /realistic
+      title: Realistic
+    - payload: /investigative
+      title: Investigative
+    - payload: /artistic
+      title: Artistic
+    - payload: /social
+      title: Social
+    - payload: /enterprising
+      title: Enerprising
+    - payload: /conventional
+      title: Conventional
+    text: Finished? What was the highest you scored in?
+  utter_make_note:
+  - text: Thanks {first_name} I will make note of that.
+  utter_work_today:
+  - text: What are we focusing on today {first_name}?
+  - text: So what can we work on today {first_name}?
+  - text: Hey {first_name} whats today's focus?
   utter_inform_course:
   - text: |-
       We offer searches on any of the following subjects:
       - Arts & Humanities
-      - Business 
+      - Business
       - Computer Science
       - Engineering & Science
       - Health
       - Mathematics
       - Personal Development
       - Social Science
-  utter_give_questionnaire:
-  - text: Take this test ☑📝 and then let me know what learner you are. https://vark-learn.com/the-vark-questionnaire/
-  utter_choose_learner_type:
-  - buttons:
-    - payload: /visual
-      title: Visual
-    - payload: /aural
-      title: Aural
-    - payload: /read_write_learner
-      title: Read/Write
-    - payload: /kinesthetic
-      title: Kinesthetic
-    text: What type of leaner are you?
-  utter_visual:
-  - text: |-
-      So you're a visual learner huh? 👁 The best courses for you would include the following:
-      - Courses that include lots of demonstrations
-      - Courses that include tests
-      - Courses that focus on teaching with visual aids such as; symbols and pictures
-  utter_aural:
-  - text: |-
-      So you're a aural learner huh? 🗣 The best courses for you would include the following:
-      - Courses that include forums that encourage communication
-      - Courses that can offer live webinars for interactions
-      - Courses that allow you to test your knowledge by teaching others
-      - Courses that provide group activities for team work interaction.
-  utter_read_write:
-  - text: |-
-      So you're a Read/write learner huh? 📖 The best courses for you would include the following:
-      - Courses that include book recommendations
-      - Courses that offer reading comprehensions and then questions to answer
-      - Maybe courses aren't what you're looking for ... Maybe what you need are books to get the most out of learning something new
-  utter_kinesthetic:
-  - text: |-
-      So you're a kinesthetic learner huh? 🖐 The best courses for you would include the following:
-      - Courses that you can explore with physical senses e.g painting or carrying out experiments
-      - Courses that can offer live webinars for interactions
-      - Courses that allow you to test your knowledge by making your own projects
+  utter_no_worries:
+  - text: No Problem :)
+  utter_ask_continue:
+  - text: Sorry, I don't quite understand. Do you want to continue?
   utter_sorry:
   - text: Sorry that didn't make you feel better.
   utter_reply_name:
   - text: Your name is {first_name}
   utter_reply_no_name:
   - text: You haven't given me your name yet.
+  utter_already_sub:
+  - text: You have already subscribed
+  utter_ask_health_form_confirm_exercise:
+  - text: Did you exercise yesterday? Don't sweat it if you didn't run a marathon - walks count!
+
+  utter_ask_health_form_sleep:
+  - text: How much sleep did you get 💤 last night?
+
+  utter_ask_health_form_exercise :
+  - text: What kind of exercise did you do?
+
+  utter_ask_health_form_diet:
+  - text: Did you stick to a healthy diet 🥦 yesterday?
+
+  utter_ask_health_form_stress:
+  - text: Is your stress level low, medium or high 🧘🏼?
+    buttons:
+    - title: "Low"
+      payload: '/inform{{"stress": "low"}}'
+    - title: "Medium"
+      payload: '/inform{{"stress": "medium"}}'
+    - title: "High"
+      payload: '/inform{{"stress": "high"}}'
+
+  utter_ask_health_form_goal:
+  - text: Setting goals - even small ones - is a great way to focus your day. What do you want to accomplish today 🥇 ?
+
+  utter_slots_value:
+  - text: "Here's your daily wellness log:\n
+            - Exercised?: {confirm_exercise}\n
+            - Type of exercise: {exercise}\n
+            - Sleep: {sleep}\n
+            - Stuck to a healthy diet?: {diet}\n
+            - Stress level: {stress}\n
+            - Goal: {goal}"
 actions:
 - action_show_time
 - change_name_filled
 - check_name_filled
+- utter_advice
+- utter_advice/general
+- utter_advice/study_tips
+- utter_artistic_questions
 - utter_ask_name
 - utter_ask_permission
-- utter_ask_signup
+- utter_ask_score
 - utter_chitchat
+- utter_conventional_questions
+- utter_enteprising_questions
 - utter_greet
-- utter_help
-- utter_inform_affirm
-- utter_inform_name_given
+- utter_investigative_questions
 - utter_out_of_scope
-- utter_slots_values
+- utter_realistic_questions
+- utter_name_value
+- utter_social_questions
+- utter_start_message
 - utter_submit
-- utter_submit_no_name
 - validate_email_form
 - validate_name_form
 forms:
@@ -284,3 +528,36 @@ forms:
         type: from_entity
       - intent: inform
         type: from_text
+  health_form:
+    confirm_exercise:
+      - type: from_intent
+        intent: inform
+        value: true
+      - type: from_intent
+        intent: affirm
+        value: true
+      - type: from_intent
+        intent: deny
+        value: false
+    exercise:
+      - type: from_entity
+        entity: exercise
+    sleep:
+      - type: from_entity
+        entity: sleep
+      - type: from_intent
+        intent: deny
+        value: "None"
+    diet:
+      - type: from_text
+        intent: inform
+      - type: from_text
+        intent: affirm
+      - type: from_text
+        intent: deny
+    stress:
+      - type: from_entity
+        entity: stress
+    goal:
+      - type: from_text
+        intent: inform

@@ -42,10 +42,8 @@ stories:
   - action: validate_name_form
   - slot_was_set:
     - requested_slot: null
-  - action: utter_slots_values
-  - action: utter_ask_signup
-  - intent: deny
-  - action: utter_inform_name_given
+  - action: utter_name_value
+  - action: utter_start_message
 
 - story: interactive_story_1_affirm
   steps:
@@ -67,11 +65,8 @@ stories:
   - action: validate_name_form
   - slot_was_set:
     - requested_slot: null
-  - action: utter_slots_values
-  - action: utter_ask_signup
-  - intent: affirm
-  - action: utter_inform_affirm
-  - action: utter_help
+  - action: utter_name_value
+  - action: utter_start_message
 
 - story: Submit_email_form
   steps:
@@ -86,76 +81,40 @@ stories:
   - action: validate_email_form
 
 
-- story: Subrscribed to updates
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_ask_permission
-  - intent: affirm
-  - action: utter_ask_name
-  - intent: inform
-  - active_loop: name_form
-  - slot_was_set:
-    - first_name: jacob
-  - slot_was_set:
-    - first_name: jacob
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_submit
-  - action: validate_name_form
-  - slot_was_set:
-    - requested_slot: null
-  - action: utter_slots_values
-  - action: utter_ask_signup
-  - intent: affirm
-  - action: utter_inform_affirm
-  - action: utter_help
-  - intent: subscribe_to_updates
-  - action: utter_ask_email
-  - intent: inform
-    entities:
-    - email: my@example.com
-  - slot_was_set:
-    - email: my@example.com
-  - action: utter_submit
-  - action: validate_email_form
-
-
-- story: aural learner
-  steps:
-  - intent: ask_learning_type
-  - action: utter_give_questionnaire
-  - action: utter_choose_learner_type
-  - intent: aural
-  - action: utter_aural
-
-
-- story: visual learner
-  steps:
-  - intent: ask_learning_type
-  - action: utter_give_questionnaire
-  - action: utter_choose_learner_type
-  - intent: visual
-  - action: utter_visual
-
-
-- story: read/write learner
-  steps:
-  - intent: ask_learning_type
-  - action: utter_give_questionnaire
-  - action: utter_choose_learner_type
-  - intent: read_write_learner
-  - action: utter_read_write
-
-
-- story: kinesthetic learner
-  steps:
-  - intent: ask_learning_type
-  - action: utter_give_questionnaire
-  - action: utter_choose_learner_type
-  - intent: kinesthetic
-  - action: utter_kinesthetic
+#- story: aural learner
+#  steps:
+#  - intent: ask_learning_type
+#  - action: utter_give_questionnaire
+#  - action: utter_choose_learner_type
+#  - intent: aural
+#  - action: utter_aural
+#
+#
+#- story: visual learner
+#  steps:
+#  - intent: ask_learning_type
+#  - action: utter_give_questionnaire
+#  - action: utter_choose_learner_type
+#  - intent: visual
+#  - action: utter_visual
+#
+#
+#- story: read/write learner
+#  steps:
+#  - intent: ask_learning_type
+#  - action: utter_give_questionnaire
+#  - action: utter_choose_learner_type
+#  - intent: read_write_learner
+#  - action: utter_read_write
+#
+#
+#- story: kinesthetic learner
+#  steps:
+#  - intent: ask_learning_type
+#  - action: utter_give_questionnaire
+#  - action: utter_choose_learner_type
+#  - intent: kinesthetic
+#  - action: utter_kinesthetic
 
 
 - story: ask course story
@@ -190,17 +149,6 @@ stories:
 #  - intent: deny
 #  - action: utter_submit
 
-- story: no name sign up story deny
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_ask_permission
-  - intent: deny
-  - action: utter_submit_no_name
-  - action: utter_ask_signup
-  - intent: deny
-  - action: utter_inform_no_name
-
 - story: no name sign up story affirm
   steps:
   - intent: greet
@@ -208,10 +156,8 @@ stories:
   - action: utter_ask_permission
   - intent: deny
   - action: utter_submit_no_name
-  - action: utter_ask_signup
-  - intent: affirm
-  - action: utter_inform_affirm
-  - action: utter_help
+  - action: utter_start_message
+
 
 - story: path about time
   steps:
@@ -251,24 +197,9 @@ stories:
   - active_loop: null
   - action: utter_submit
   - action: validate_name_form
-  - action: utter_slots_values
-  - action: utter_ask_signup
+  - action: utter_name_value
+  - action: utter_start_message
 
-- story: story name 2
-  steps:
-  - intent: inform
-  - active_loop: name_form
-  - slot_was_set:
-    - first_name: jacob
-  - slot_was_set:
-    - first_name: jacob
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_submit
-  - action: validate_name_form
-  - action: utter_slots_values
-  - action: utter_ask_signup
 
 
 - story: invalid name
@@ -285,6 +216,7 @@ stories:
     - first_name: jj
   - action: utter_submit
   - action: validate_name_form
+
 
 - story: when ever user asks for their name
   steps:
@@ -307,8 +239,8 @@ stories:
     - first_name: jacob
   - action: utter_submit
   - action: validate_name_form
-  - action: utter_slots_values
-  - action: utter_ask_signup
+  - action: utter_name_value
+  - action: utter_start_message
 
 - story: interactive_story_1
   steps:
@@ -323,69 +255,9 @@ stories:
     - first_name: jbob
   - action: utter_submit
   - action: validate_name_form
-  - action: utter_slots_values
-  - action: utter_ask_signup
-#- story: interactive_story_1
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - action: utter_ask_permission
-#  - intent: affirm
-#  - action: utter_ask_name
-#  - intent: inform
-#    entities:
-#    - first_name: cooolj
-#  - slot_was_set:
-#    - first_name: cooolj
-#  - action: utter_submit
-#  - action: validate_name_form
-#  - action: utter_slots_values
-#  - action: utter_ask_signup
-#  - intent: deny
-#  - action: utter_inform_name_given
-#  - intent: inform
-#    entities:
-#    - first_name: jacob
-#  - slot_was_set:
-#    - first_name: jacob
-#  - action: change_name_filled
-#  - intent: affirm
-#  - action: utter_ask_name
-#  - intent: inform
-#    entities:
-#    - first_name: jacob
-#  - slot_was_set:
-#    - first_name: jacob
-#  - action: utter_submit
-#  - action: validate_name_form
-#  - action: utter_slots_values
-#
-#- story: interactive_story_1
-#  steps:
-#  - intent: request_names
-#  - action: check_name_filled
-#  - intent: affirm
-#  - action: utter_ask_name
-#  - intent: inform
-#    entities:
-#    - first_name: deno
-#  - slot_was_set:
-#    - first_name: deno
-#  - action: utter_submit
-#  - action: validate_name_form
-#  - action: utter_slots_values
-#  - action: utter_ask_signup
-#  - intent: affirm
-#  - action: utter_inform_affirm
-#  - action: utter_help
-#  - intent: inform
-#    entities:
-#    - first_name: denis
-#  - slot_was_set:
-#    - first_name: denis
-#  - action: change_name_filled
-#  - intent: deny
-#  - action: utter_submit_no_name
+  - action: utter_name_value
+  - action: utter_start_message
+
 
 - story: interactive_story_1
   steps:
@@ -401,5 +273,99 @@ stories:
     - first_name: coolboy
   - action: utter_submit
   - action: validate_name_form
-  - action: utter_slots_values
-  - action: utter_ask_signup
+  - action: utter_name_value
+  - action: utter_start_message
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_permission
+  - intent: affirm
+  - action: utter_ask_name
+  - intent: inform
+    entities:
+    - first_name: jac
+  - slot_was_set:
+    - first_name: jac
+  - action: utter_submit
+  - action: validate_name_form
+  - action: utter_name_value
+  - action: utter_start_message
+  - intent: affirm
+  - action: utter_realistic_questions
+  - action: utter_investigative_questions
+  - action: utter_artistic_questions
+  - action: utter_social_questions
+  - action: utter_enteprising_questions
+  - action: utter_conventional_questions
+  - action: utter_ask_score
+
+- story: realistic
+  steps:
+  - action: utter_ask_score
+  - intent: realistic
+  - action: utter_make_note
+  - action: utter_work_today
+
+- story: investigative
+  steps:
+  - action: utter_ask_score
+  - intent: investigative
+  - action: utter_make_note
+  - action: utter_work_today
+
+- story: artistic
+  steps:
+  - action: utter_ask_score
+  - intent: artistic
+  - action: utter_make_note
+  - action: utter_work_today
+
+- story: social
+  steps:
+  - action: utter_ask_score
+  - intent: social
+  - action: utter_make_note
+  - action: utter_work_today
+
+- story: enterprising
+  steps:
+  - action: utter_ask_score
+  - intent: enterprising
+  - action: utter_make_note
+  - action: utter_work_today
+
+- story: conventional
+  steps:
+  - action: utter_ask_score
+  - intent: conventional
+  - action: utter_make_note
+  - action: utter_work_today
+
+- story: Sad Path 1 - Retry
+  steps:
+  - intent: set_goals
+  - action: health_form
+  - active_loop: health_form
+  - intent: out_of_scope
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: health_form
+  - active_loop: null
+  - action: utter_slots_value
+  - action: action_restart
+
+- story: Sad Path 2 - Stop
+  steps:
+  - intent: set_goals
+  - action: health_form
+  - active_loop: health_form
+  - intent: out_of_scope
+  - action: utter_ask_continue
+  - intent: deny
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_no_worries
+  - action: action_restart

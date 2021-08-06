@@ -230,11 +230,13 @@ nlu:
     - thank you mrs bot
     - thank you mr Bot
     - Thanks! OI
+    - Appriciate that otto
     - I appreciate that
     - I Thank You
     - Thanking youuuu
     - THankknknsss
     - that was helpful
+    - You are a great coach
     - Thanks that was helpful
     - thaT was helpful thanks
     - Very helpful
@@ -292,23 +294,43 @@ nlu:
     - cool, now tell me what learner I am
     - great now can i have a learner test
     - thanks. I think I want to take a learner test
-- intent: visual
+- intent: realistic
   examples: |
-    - i am a visual
-    - visual
-    - I definitely learn things visually best!
-- intent: aural
+    - i am a realistic
+    - i'm a realist
+    - I scored highest in realistic so I beleive I'm that
+    - I scored 10 in realistic and that was my highest
+    - I scored highest in realistic
+    - I'm definitely realistic!
+- intent: investigative
   examples: |
-    - i am a aural
-    - aural
-- intent: read_write_learner
+    - i investigative
+    - investigative
+    - I scored full marks for investigative
+    - I am an investigative personality type
+- intent: artistic
   examples: |
-    - i am a read/write
-    - read/write
-- intent: kinesthetic
+    - i am quite artistic
+    - I am artsy
+    - I scored highest in the artistic department
+    - my personality typ is definetly artistic
+- intent: social
   examples: |
-    - i am a Kinesthetic
-    - Kinesthetic
+    - i am social
+    - I like to talk to people alot I guess it explains why i got social
+    - I scored 12 in social
+- intent: enterprising
+  examples: |
+    - i am enterprising
+    - I scored highest with enterprising
+    - full marks in enterprising
+    - enterprising
+- intent: conventional
+  examples: |
+    - i am conventional
+    - I scored highest with conventional
+    - full marks in conventional
+    - conventional
 - intent: need_help
   examples: |
     - what do you offer again?
@@ -423,7 +445,7 @@ nlu:
   examples: |
     - my name is [jacob](first_name)
     - [jaco](first_name)
-    - [Jacob](first_name)
+    - [sammy](first_name)
     - [munzer](first_name) is the name
     - you can call me [ciariam](first_name) if you want
     - people call me [John](first_name)
@@ -431,13 +453,13 @@ nlu:
     - I am named [Sarah](first_name)
     - [Joe smith](first_name)
     - [alex sandro](first_name)
-    - [Jacob Fecunda](first_name)
+    - [Toby](first_name)
     - my email is [jf@example.com](email)
     - email is [jacob@example.com](email)
     - [email@fakeemail.com](email)
     - This is my email [cool@gmail.com](email)
     - I'd like to subscribe using [jfjf@outlook.com](email)
-    - [jacob](first_name)
+    - [bryan](first_name)
     - [hfjksdlhfjklsd](email)
     - [thismyemail.com](email)
     - [hjdfska.com](email)
@@ -449,10 +471,52 @@ nlu:
     - [jf@exampe.com](email)
     - my name be [jbob](first_name)
     - my naem is [cooolj](first_name)
-    - you can call me [jacob](first_name)
+    - you can call me [Dev](first_name)
     - the name is [deno](first_name)
     - [denis](first_name)
     - my name is [coolboy](first_name)
+    - [jack](first_name)
+    - a full [8 hours](sleep)
+    - only [four hours](sleep)
+    - about [six hours](sleep)
+    - [low](stress)
+    - [medium](stress)
+    - [high](stress) stress right now
+    - Yes, I went for a [run](exercise)
+    - uh huh an hour of [yoga](exercise)
+    - yep, I went for a [hike](exercise)
+    - Yes I took the dog for a [walk](exercise)
+    - Yeah, I played [tennis](exercise)
+    - I went [swimming](exercise)
+    - I went for [walk](exercise)
+    - I did [swimming](exercise)
+    - I went for [cycling](exercise)
+    - Took a [spin class](exercise)
+    - Did some [boxing](exercise)
+    - [rock climbing](exercise)
+    - played some [basketball](exercise)
+    - played [football](exercise)
+    - I did a [workout](exercise) video
+    - I want to get up early and go for a run
+    - Be more patient with my family
+    - Try to be a better friend
+    - Make sure to eat better tomorrow
+    - eat less junk food
+    - eat better
+    - spend less time on my phone
+    - don't procrastinate
+    - Go to bed earlier
+    - Don't stay up so late
+    - try to make some time to meditate
+    - i ate pretty healthy overall
+    - lots of fruits and vegetables
+    - I ate a salad
+    - too many snacks
+    - too many sweets
+    - too much junk food
+    - a lot of carbs
+    - too much fatty food
+    - Get more exercise
 - intent: give_time
   examples: |
     - can you tell me what time it is
@@ -521,3 +585,14 @@ nlu:
     - what time it is
     - what's the time
     - whats the time now
+- intent: set_goals
+  examples: |
+    - I want to set some goals
+    - Can I set some goals
+    - I want to plan out some goals
+- intent: advice
+  examples: |
+    - i need advice
+    - can i have advice on studying
+    - i need study advice
+

@@ -1,0 +1,31 @@
+version: "2.0"
+nlu:
+- intent: advice/study_tips
+  examples: |
+    - I need studying advice
+    - yeah I could use with some studying advice
+    - need tips on studying
+- intent: advice/procrastination_tips
+  examples: |
+    - I need to stop being a procratinator
+    - any proscrastination tips?
+    - advice on procrastinating please
+    - I need advice on procrastination
+- intent: advice/podcast_suggestion
+  examples: |
+    - Give me a good learning podcast suggestion
+    - podcast suggestion please
+- intent: advice/cv_writing
+  examples: |
+    - I need help at writing a better CV
+- intent: advice/general
+  examples: |
+    - I need advice
+    - Can I have some advice?
+    - advice pls
+- intent: advice/irrelevant
+  examples: |
+    - I need love advice
+    - I need advice on how to get guys
+    - I need advice on how to get girls
+    - I need advice on making freinds

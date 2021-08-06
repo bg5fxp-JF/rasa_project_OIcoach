@@ -38,20 +38,13 @@ rules:
   - action: utter_ask_permission
   - intent: deny
   - action: utter_submit_no_name
-  - action: utter_ask_signup
+  - action: utter_start_message
 
-- rule: no name sign up story affirm
-  steps:
-  - action: utter_ask_signup
-  - intent: affirm
-  - action: utter_inform_affirm
-  - action: utter_help
-
-- rule: out-of-scope
-  steps:
-  - intent: out_of_scope
-  - action: utter_out_of_scope
-  - action: utter_help
+#- rule: out-of-scope
+#  steps:
+#  - intent: out_of_scope
+#  - action: utter_out_of_scope
+#  - action: utter_help
 
 - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
   steps:
@@ -64,6 +57,26 @@ rules:
   steps:
   - intent: chitchat
   - action: utter_chitchat
+
+- rule: advice
+  steps:
+  - intent: advice
+  - action: utter_advice
+
+- rule: Activate health_form
+  steps:
+  - intent: set_goals
+  - action: health_form
+  - active_loop: health_form
+
+- rule: Submit health_form
+  condition:
+  - active_loop: health_form
+  steps:
+  - action: health_form
+  - active_loop: null
+  - action: utter_slots_value
+  - action: action_restart
 
 #
 #- rule: Submit name_form2

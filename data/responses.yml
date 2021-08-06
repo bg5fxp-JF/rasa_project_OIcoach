@@ -2,8 +2,39 @@ version: "2.0"
 intents:
   - out_of_scope
   - chitchat
-
+  - advice
 responses:
+  utter_advice/study_tips:
+  - text: |-
+      Here are my top 10 tips for studying:
+
+      1. Pick a place and time
+      2. Study every day
+      3. Plan your time
+      4. Discover your learning style
+      5. Review and revise
+      6. Take breaks
+      7. Ask for help
+      8. Stay motivated
+      9. App it up
+      10. Look after yourself
+  utter_advice/procrastination_tips:
+  - text: |-
+      To combat procrastination I say you should:
+
+      1. Be brutally honest about your priorities.
+      2. Stop feeling guilty.
+      3. Change how you describe yourself.
+      4. Build systems to accomplish goals.
+      5. Reward yourself for your work.
+  utter_advice/podcast_suggestion:
+  - text: This is the best audio series I know 😎 https://www.listennotes.com/podcasts/otermans-institute-audio-lessons-otermans-PN64gYwoDVf/
+  utter_advice/cv_writing:
+  - text: This is one of our audio lessons on CV Writing https://lnns.co/E724ObAgTxS
+  utter_advice/general:
+  - text: Sure what sort of advice?
+  utter_advice/irrelevant:
+  - text: Ohh.. can't say thats my strong suit. Im not that kind of coach😂 How about some advice about studying?
   utter_out_of_scope/non_english:
   - text: I only understand English, I'm sorry.
   - text: At this moment I only understand English ☹️
@@ -20,15 +51,15 @@ responses:
   - text: I was made by software engineers, but hard work is what built me.
   - text: I'm building myself every day. I've been working out, did you notice?
   utter_chitchat/who_made_you:
-  - text: I was created by Ciaram, Munzer & Jacob! 🧠
+  - text: I was created by Munzer & Jacob! 🧠
   utter_chitchat/ask_isbot:
   - text: Yep, I'm a bot!
   - text: Yes, I'm a bot.
   - text: Yep, you guessed it, I'm a bot!
   - text: I am indeed a bot 🤖
-  - text: Yes, I am haha. I am OI's search tool bot 🤖 here to help with any queries 😃
+  - text: Yes, I am haha.
   utter_chitchat/ask_ishuman:
-  - text: I'm not a human, I'm a bot! 🤖 I am OI's search tool bot 🤖 here to help with any queries 😃
+  - text: I'm not a human, I'm a bot! 🤖
   utter_chitchat/ask_languagesbot:
   - text: I can spell baguette in French, but unfortunately English is the only language I can answer you in.
   - text: I am in the process of learning, but at the moment I can only speak English.
@@ -46,7 +77,7 @@ responses:
   - text: Who do you think you are?
   - text: Unfortunately I haven't been programmed with the amount of necessary philosophy knowledge to answer that.
   utter_chitchat/ask_whoisit:
-  - text: I am OI's search tool bot 🤖 here to help with any queries 😃
+  - text: I am Otto 🦦 your coach bot 🤖 here to help you be the best version of you
   utter_chitchat/how_are_you:
   - text: I'm doing pretty allright thanks!
   - text: Soooo tired! A lot of people to deal with, not easy being a bot you know! 😉
