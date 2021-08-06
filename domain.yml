@@ -509,3 +509,4 @@ forms:
       goal:
       - type: from_text
         intent: inform
+
