@@ -14,18 +14,68 @@ nlu:
 - intent: advice/podcast_suggestion
   examples: |
     - Give me a good learning podcast suggestion
+    - What are good podcasts to learn from
+    - Show me a good podcast where I can learn
+    - Show me a good podcast
+    - Can you suggest me a podcast
+    - Where can I learn useful things?
+    - Is a podcast good to learn from?
+    - What podcasts are out there
+    - Do you offer podcasts
+    - Whats a good podcast for advice with learning
+    - Whats a good podcast that could advise me how to be a better learner
+    - Do you know of a podcast that can help me?
+    - Do you know of a podcast that can better me?
     - podcast suggestion please
 - intent: advice/cv_writing
   examples: |
     - I need help at writing a better CV
+    - any advice for cv writing
+    - I want to know how to write a good cv
+    - How can I improve my cv
+    - I need advice for making a good CV
+    - I need advice for improving my cv
+    - I need advice for making the best CV
+    - I need advice for writing a Cv
+    - What are some CV techniques you know
+    - Any tips for writing a good CV?
+    - How can I write the best cv
+    - What makes a good cv
+    - What will help me write an amazing Cv
+    - I need help with CV's
+    - I have to improve my CV skill
+    - I was told to improve my CV
+    - What can make me better at writing CVs
+    - I need to make a good Cv for my resume
 - intent: advice/general
   examples: |
     - I need advice
     - Can I have some advice?
     - advice pls
+    - I need advice so that I can be smart
+    - What advice do you have for me?
+    - I could use with some general advice
+    - I could use with some advice
+    - I need some standard advice
+    - I want advice
+    - Can you give me some advice?
+    - Any advice?
+    - Could you advise me?
 - intent: advice/irrelevant
   examples: |
     - I need love advice
+    - i need advice on becoming king
+    - Advice for getting married
+    - I need help on how to be popular
+    - How can i be popular
+    - How can i be cool
+    - Can I have some advice on how to become the president
+    - How can I become queen
+    - How do i apply to mastechef
+    - I need advice on being a good cook
+    - Can you advise me on where to go
+    - I need advice on how to be nice
+    - I need advice on how to be strict
     - I need advice on how to get guys
     - I need advice on how to get girls
     - I need advice on making freinds

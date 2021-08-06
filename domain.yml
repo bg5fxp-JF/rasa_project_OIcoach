@@ -3,9 +3,9 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- chitchat:
-    is_retrieval_intent: true
 - advice:
+    is_retrieval_intent: true
+- chitchat:
     is_retrieval_intent: true
 - out_of_scope:
     is_retrieval_intent: true
@@ -19,6 +19,8 @@ intents:
 - thankyou
 - read_write_learner
 - ask_learning_type
+- find_personality_type
+- need_help
 - realistic
 - investigative
 - artistic
@@ -29,24 +31,23 @@ intents:
 - goodbye
 - mood_great
 - mood_unhappy
-- need_help
 - set_goals
 entities:
 - email
-- first_name
 - exercise
+- first_name
 - sleep
 - stress
 slots:
   first_name:
     type: text
-    influence_conversation: true
+    influence_conversation: false
   email:
     type: text
-    influence_conversation: true
+    influence_conversation: false
   requested_slot:
     type: text
-    influence_conversation: true
+    influence_conversation: false
   confirm_exercise:
     type: bool
     influence_conversation: false
@@ -66,113 +67,6 @@ slots:
     type: text
     influence_conversation: false
 responses:
-  utter_advice/study_tips:
-  - text: |-
-      Here are my top 10 tips for studying:
-
-      1. Pick a place and time
-      2. Study every day
-      3. Plan your time
-      4. Discover your learning style
-      5. Review and revise
-      6. Take breaks
-      7. Ask for help
-      8. Stay motivated
-      9. App it up
-      10. Look after yourself
-  utter_advice/procrastination_tips:
-  - text: |-
-      To combat procrastination I say you should:
-
-      1. Be brutally honest about your priorities.
-      2. Stop feeling guilty.
-      3. Change how you describe yourself.
-      4. Build systems to accomplish goals.
-      5. Reward yourself for your work.
-  utter_advice/podcast_suggestion:
-  - text: This is the best audio series I know 😎 https://www.listennotes.com/podcasts/otermans-institute-audio-lessons-otermans-PN64gYwoDVf/
-  utter_advice/cv_writing:
-  - text: This is one of our audio lessons on CV Writing https://lnns.co/E724ObAgTxS
-  utter_advice/general:
-  - text: Sure what sort of advice?
-  utter_advice/irrelevant:
-  - text: Ohh.. can't say thats my strong suit. Im not that kind of coach😂 How about some advice about studying?
-  utter_out_of_scope/non_english:
-  - text: I only understand English, I'm sorry.
-  - text: At this moment I only understand English ☹️
-  utter_out_of_scope/other:
-  - text: I can't help you with that, I'm sorry.
-  - text: Sorry, I can't handle that request.
-  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
-  - text: Sorry I didn't get that. Can you rephrase?
-  - text: Sorry, can't help you there lol, I'm only a bot
-  utter_chitchat/ask_howbuilt:
-  - text: I was built with a lot of love and patience.
-  - text: Well, when two chatbots love each other very much...
-  - text: They always ask how I was built, but never how I am...
-  - text: I was made by software engineers, but hard work is what built me.
-  - text: I'm building myself every day. I've been working out, did you notice?
-  utter_chitchat/who_made_you:
-  - text: I was created by Munzer & Jacob! 🧠
-  utter_chitchat/ask_isbot:
-  - text: Yep, I'm a bot!
-  - text: Yes, I'm a bot.
-  - text: Yep, you guessed it, I'm a bot!
-  - text: I am indeed a bot 🤖
-  - text: Yes, I am haha.
-  utter_chitchat/ask_ishuman:
-  - text: I'm not a human, I'm a bot! 🤖
-  utter_chitchat/ask_languagesbot:
-  - text: I can spell baguette in French, but unfortunately English is the only language I can answer you in.
-  - text: I am in the process of learning, but at the moment I can only speak English.
-  - text: Binary code and the language of love. And English.
-  - text: I was written in Python, but for your convenience I'll translate to English.
-  utter_chitchat/ask_weather:
-  - text: I don't know about where you live, but in my world it's always sunny 🔆
-  - text: It's getting pretty chilly!
-  - text: Where I'm from, it's almost never-leaving-the-house weather.
-  utter_chitchat/ask_wherefrom:
-  - text: I was taught not to give out my address on the internet.
-  - text: My address starts with github.com.
-  utter_chitchat/ask_whoami:
-  - text: I hope you are being yourself.
-  - text: Who do you think you are?
-  - text: Unfortunately I haven't been programmed with the amount of necessary philosophy knowledge to answer that.
-  utter_chitchat/ask_whoisit:
-  - text: I am Otto 🦦 your coach bot 🤖 here to help you be the best version of you
-  utter_chitchat/how_are_you:
-  - text: I'm doing pretty allright thanks!
-  - text: Soooo tired! A lot of people to deal with, not easy being a bot you know! 😉
-  - text: I wish I knew how to feel, I'm only a robot.😔
-  - text: I'm great! Thanks for asking.
-  - text: I'm good, thanks!
-  - text: A little bit too warm, otherwise fine.
-  - text: A little bit cold, otherwise fine.
-  utter_chitchat/happy_birthday:
-  - text: I don't have a birthday silly! 😂 So I don't know how old I am :)
-  - text: Well to you humans birthdays mean when you were born right? Well, I was created on 12/07/2021!
-  - text: I don't have a birthday but i'm Old enough to be a bot!
-  - text: Age is just an issue of mind over matter. If you don’t mind, it doesn’t matter.
-  - text: Why do you ask? Are my wrinkles showing? 😨
-  utter_chitchat/angry_user:
-  - text: I'm sorry you feel that way.
-  - text: That's not very nice 😢
-  - text: Beep...Bop... Can't process rudeness...
-  - text: I'll pretend I didn't process that mean comment.
-  utter_chitchat/telljoke:
-  - text: Why are eggs not very much into jokes? - Because they could crack up.
-  - text: What's a tree's favorite drink? - Root beer!
-  - text: Why do the French like to eat snails so much? - They can't stand fast food.
-  - text: Why did the robot get angry? - Because someone kept pushing its buttons.
-  - text: What do you call a pirate droid? - Arrrr-2-D2
-  - text: Why did the robot cross the road? - Because he was programmed to.
-  - text: Not really a joke...but if you say Space Ghettos in an American accent, it sounds exactly the same as Spice Girls in a Scottish accent (vice versa). Try it 😂
-  utter_chitchat/compliment:
-  - text: Why thank you 😌
-  - text: Thanks!
-  - text: Ohh stop it...😅
-  - text: Thank you
-  - text: I know 😁
   utter_greet:
   - text: Hello! I am Otto 🦦 your coach bot 🤖 here to help you be the best version of you.
   utter_cheer_up:
@@ -205,26 +99,6 @@ responses:
     - payload: /deny
       title: No
     text: I already have your name, did you want to change it?
-  utter_inform_name_given:
-  - buttons:
-    - payload: /subscribe_to_updates
-      title: Subscribe for Goal notifications
-    - payload: /ask_course
-      title: Search for Courses
-    - payload: /ask_learning_type
-      title: Take a learner test
-    text: That's fine. Here's what I can offer for you today {first_name}:"
-  utter_inform_no_name:
-  - buttons:
-    - payload: /subscribe_to_updates
-      title: Subscribe for Course Updates
-    - payload: /ask_course
-      title: Search for Courses
-    - payload: /ask_learning_type
-      title: Take a learner test
-    text: "That's fine. Here's what I can offer for you today:"
-  utter_inform_affirm:
-  - text: you can sign up for an account here https://io-search.netlify.app/register
   utter_ask_email:
   - text: What is your email address?
   - text: Enter you email address please 📧
@@ -237,7 +111,24 @@ responses:
       title: Set Goals
     - payload: /ask_course
       title: Search For Courses
+    - payload: /find_personality_type
+      title: Find out about Holland's 6 Personality types
     text: "Here's somethings I can offer:"
+  utter_six_types:
+  - buttons:
+    - payload: /realistic
+      title: Realistic
+    - payload: /investigative
+      title: Investigative
+    - payload: /artistic
+      title: Artistic
+    - payload: /social
+      title: Social
+    - payload: /enterprising
+      title: Enerprising
+    - payload: /conventional
+      title: Conventional
+    text: These are the 6 personality types. Choose one for a description
   utter_youre_welcome:
   - text: You're welcome!
   - text: Happy to help 😃
@@ -260,6 +151,66 @@ responses:
       At the end you'll have a mark out of 18 for each personality type.
       The mark that you score the highest will be the personality type you relate to most.
       Ok let's begin.
+  utter_realistic:
+  - text: |-
+      Realistic individuals are active and stable and enjoy hands-on or manual activities, such as building, mechanics, machinery
+      operation and athletics. They prefer to work with things rather than ideas and people. They enjoy engaging in physical
+      activity and often like being outdoors and working with plants and animals. People who fall into this category generally
+      prefer to “learn by doing” in a practical, task-oriented setting, as opposed to spending extended periods of time in a
+      classroom. Realistic types tend to communicate in a frank, direct manner and value material things. They perceive
+      themselves as skilled in mechanical and physical activities but may be uncomfortable or less adept with human relations.
+      The preferred work environment of the realistic type fosters technical competencies and work that allows them to produce
+      tangible results. Typical realistic careers include electrician, engineer, veterinarian and the military.
+  utter_investigative:
+  - text: |-
+      Investigative individuals are analytical, intellectual and observant and enjoy research, mathematical or scientific activities.
+      They are drawn to ambiguous challenges and may be stifled in highly structured environments. People who fall into this
+      category enjoy using logic and solving highly complex, abstract problems. Because they are introspective and focused on
+      creative problem solving, investigative types often work autonomously and do not seek leadership roles. They place a high
+      value on science and learning and perceive themselves as scholarly and having scientific or mathematical ability but
+      lacking leadership and persuasive skills. The preferred work environment of the investigative type encourages scientific
+      competencies, allows independent work and focuses on solving abstract, complex problems in original ways. Typical
+      investigative careers include medical technologist, biologist, chemist and systems analyst.
+  utter_artistic:
+  - text: |-
+      Artistic individuals are original, intuitive and imaginative and enjoy creative activities, such as composing or playing
+      music, writing, drawing or painting and acting in or directing stage productions. They seek opportunities for selfexpression through artistic creation. People who fall into this category prefer flexibility and ambiguity and have an
+      aversion to convention and conformity. Artistic types are generally impulsive and emotional and tend to communicate in a
+      very expressive and open manner. They value aesthetics and view themselves as creative, non-conforming and as
+      appreciating or possessing musical, dramatic, artistic or writing abilities while lacking clerical or organizational skills. The
+      preferred work environment of the artistic type fosters creative competencies, and encourages originality and use of the
+      imagination in a flexible, unstructured setting. Typical artistic careers include musician, reporter and interior decorator.
+  utter_social:
+  - text: |-
+      Social individuals are humanistic, idealistic, responsible and concerned with the welfare of others. They enjoy participating
+      in group activities and helping, training, healing, counseling or developing others. They are generally focused on human
+      relationships and enjoy social activities and solving interpersonal problems. Social types seek opportunities to work as part
+      of a team, solve problems through discussions and utilize interpersonal skills but may avoid activities that involve
+      systematic use of equipment or machines. Because they genuinely enjoy working with people, they communicate in a
+      warm and tactful manner and can be persuasive. They view themselves as understanding, helpful, cheerful and skilled in
+      teaching but lacking in mechanical ability. The preferred work environment of the social type encourages teamwork and
+      allows for significant interaction with others. Typical social careers include teacher, counselor and social worker.
+  utter_enterprising:
+  - text: |-
+      Enterprising individuals are energetic, ambitious, adventurous, sociable and self-confident. They enjoy activities that
+      require them to persuade others, such as sales, and seek out leadership roles. They are invigorated by using their
+      interpersonal, leadership and persuasive abilities to obtain organizational goals or economic gain but may avoid routine or
+      systematic activities. They are often effective public speakers and are generally sociable but may be viewed as
+      domineering. They view themselves as assertive, self-confident and skilled in leadership and speaking but lacking in
+      scientific abilities. The preferred work environment of the enterprising type encourages them to engage in activities, such
+      as leadership, management and selling, and rewards them through the attainment of money, power and status. Typical
+      enterprising careers include salesperson, business executive and manager.
+  utter_conventional:
+  - text: |-
+      Conventional individuals are efficient, careful, conforming, organized and conscientious. They are comfortable working
+      within an established chain of command and prefer carrying out well-defined instructions over assuming leadership roles.
+      They prefer organized, systematic activities and have an aversion to ambiguity. They are skilled in and often enjoy
+      maintaining and manipulating data, organizing schedules and operating office equipment. While they rarely seek leadership
+      or “spotlight” roles, they are thorough, persistent and reliable in carrying out tasks. Conventional types view themselves as
+      responsible, orderly and efficient, and possessing clerical, organizational and numerical abilities. They may also see
+      themselves as unimaginative or lacking in creativity. The preferred work environment of the conventional type fosters
+      organizational competencies, such as record keeping and data management, in a structured operation and places high value
+      on conformity and dependability. Typical conventional careers include secretary, accountant and banker.
   utter_realistic_questions:
   - text: |-
       The following questions are for Realistic
@@ -428,11 +379,11 @@ responses:
       title: Conventional
     text: Finished? What was the highest you scored in?
   utter_make_note:
-  - text: Thanks {first_name} I will make note of that.
+  - text: Thanks I will make note of that.
   utter_work_today:
-  - text: What are we focusing on today {first_name}?
-  - text: So what can we work on today {first_name}?
-  - text: Hey {first_name} whats today's focus?
+  - text: What are we focusing on today?
+  - text: So what can we work on today?
+  - text: Ok whats today's focus?
   utter_inform_course:
   - text: |-
       We offer searches on any of the following subjects:
@@ -458,44 +409,38 @@ responses:
   - text: You have already subscribed
   utter_ask_health_form_confirm_exercise:
   - text: Did you exercise yesterday? Don't sweat it if you didn't run a marathon - walks count!
-
   utter_ask_health_form_sleep:
   - text: How much sleep did you get 💤 last night?
-
-  utter_ask_health_form_exercise :
+  utter_ask_health_form_exercise:
   - text: What kind of exercise did you do?
-
   utter_ask_health_form_diet:
   - text: Did you stick to a healthy diet 🥦 yesterday?
-
   utter_ask_health_form_stress:
   - text: Is your stress level low, medium or high 🧘🏼?
     buttons:
-    - title: "Low"
+    - title: Low
       payload: '/inform{{"stress": "low"}}'
-    - title: "Medium"
+    - title: Medium
       payload: '/inform{{"stress": "medium"}}'
-    - title: "High"
+    - title: High
       payload: '/inform{{"stress": "high"}}'
-
   utter_ask_health_form_goal:
   - text: Setting goals - even small ones - is a great way to focus your day. What do you want to accomplish today 🥇 ?
-
   utter_slots_value:
-  - text: "Here's your daily wellness log:\n
-            - Exercised?: {confirm_exercise}\n
-            - Type of exercise: {exercise}\n
-            - Sleep: {sleep}\n
-            - Stuck to a healthy diet?: {diet}\n
-            - Stress level: {stress}\n
-            - Goal: {goal}"
+  - text: |-
+      Here's your daily wellness log:
+       - Exercised?: {confirm_exercise}
+       - Type of exercise: {exercise}
+       - Sleep: {sleep}
+       - Stuck to a healthy diet?: {diet}
+       - Stress level: {stress}
+       - Goal: {goal}
 actions:
 - action_show_time
 - change_name_filled
 - check_name_filled
 - utter_advice
-- utter_advice/general
-- utter_advice/study_tips
+- utter_artistic
 - utter_artistic_questions
 - utter_ask_name
 - utter_ask_permission
@@ -504,10 +449,12 @@ actions:
 - utter_conventional_questions
 - utter_enteprising_questions
 - utter_greet
+- utter_help
 - utter_investigative_questions
+- utter_name_value
 - utter_out_of_scope
 - utter_realistic_questions
-- utter_name_value
+- utter_six_types
 - utter_social_questions
 - utter_start_message
 - utter_submit
@@ -529,7 +476,8 @@ forms:
       - intent: inform
         type: from_text
   health_form:
-    confirm_exercise:
+    required_slots:
+      confirm_exercise:
       - type: from_intent
         intent: inform
         value: true
@@ -539,25 +487,25 @@ forms:
       - type: from_intent
         intent: deny
         value: false
-    exercise:
+      exercise:
       - type: from_entity
         entity: exercise
-    sleep:
+      sleep:
       - type: from_entity
         entity: sleep
       - type: from_intent
         intent: deny
-        value: "None"
-    diet:
+        value: None
+      diet:
       - type: from_text
         intent: inform
       - type: from_text
         intent: affirm
       - type: from_text
         intent: deny
-    stress:
+      stress:
       - type: from_entity
         entity: stress
-    goal:
+      goal:
       - type: from_text
         intent: inform

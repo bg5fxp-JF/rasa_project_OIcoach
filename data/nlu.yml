@@ -272,28 +272,6 @@ nlu:
     - Do you offer searches for courses to do with business
     - Any courses in Engineering & Science
     - Do you offer courses on Engineering and Science?
-- intent: ask_learning_type
-  examples: |
-    - what is my learning type?
-    - i'd like to take the learning test
-    - I want to see how I can learn best
-    - learning test
-    - learning type
-    - what's the best way i can learn
-    - I'm not sure on what to learn, could you maybe help me understand which path to take?
-    - what learner am I?
-    - I request for a learning test
-    - What type of learner am I
-    - can you tell me what learner I am
-    - can you suggest a learning test
-    - Can you suggest what learning method is best for me
-    - How can i learn best
-    - learner am I wht?
-    - wht learner am i bro
-    - ok i now want to see what learner I am. can you do that for me?
-    - cool, now tell me what learner I am
-    - great now can i have a learner test
-    - thanks. I think I want to take a learner test
 - intent: realistic
   examples: |
     - i am a realistic
@@ -590,9 +568,27 @@ nlu:
     - I want to set some goals
     - Can I set some goals
     - I want to plan out some goals
-- intent: advice
+- intent: find_personality_type
   examples: |
-    - i need advice
-    - can i have advice on studying
-    - i need study advice
+    - tell me about the personality types
+    - what is my learning type?
+    - i'd like to take the learning test
+    - I want to see how I can learn best
+    - learning test
+    - learning type
+    - what's the best way i can learn
+    - I'm not sure on what to learn, could you maybe help me understand which path to take?
+    - what learner am I?
+    - I request for a learning test
+    - What type of learner am I
+    - can you tell me what learner I am
+    - can you suggest a learning test
+    - Can you suggest what learning method is best for me
+    - How can i learn best
+    - learner am I wht?
+    - wht learner am i bro
+    - ok i now want to see what learner I am. can you do that for me?
+    - cool, now tell me what learner I am
+    - great now can i have a learner test
+    - thanks. I think I want to take a learner test
 

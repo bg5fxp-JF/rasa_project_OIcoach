@@ -27,6 +27,10 @@ pipeline:
     retrieval_intent: chitchat
     scale_loss: false
     epochs: 100
+  - name: ResponseSelector
+    retrieval_intent: advice
+    scale_loss: false
+    epochs: 100
   - name: FallbackClassifier
     threshold: 0.5
 policies:

@@ -7,21 +7,21 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: name already filled greeting
-  condition:
-  - slot_was_set:
-    - first_name: jacob
-  steps:
-  - intent: greet
-  - action: utter_greet
-
-- rule: email already filled
-  condition:
-  - slot_was_set:
-    - email: jf@example.com
-  steps:
-  - intent: subscribe_to_updates
-  - action: utter_already_sub
+#- rule: name already filled greeting
+#  condition:
+#  - slot_was_set:
+#    - first_name: jacob
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#
+#- rule: email already filled
+#  condition:
+#  - slot_was_set:
+#    - email: jf@example.com
+#  steps:
+#  - intent: subscribe_to_updates
+#  - action: utter_already_sub
 
 - rule: reply to whenever user says thank you
   steps:
@@ -40,11 +40,6 @@ rules:
   - action: utter_submit_no_name
   - action: utter_start_message
 
-#- rule: out-of-scope
-#  steps:
-#  - intent: out_of_scope
-#  - action: utter_out_of_scope
-#  - action: utter_help
 
 - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
   steps:
