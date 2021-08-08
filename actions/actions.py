@@ -160,3 +160,104 @@ class ActionTime(Action):
         dispatcher.utter_message(text=f"{now}️")
         print("telling the time")
         return []
+
+
+class Question1(Action):
+
+    def name(self) -> Text:
+        return "check_q1_filled"
+
+    async def run(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        """Validate `first_name` value."""
+
+        answer = tracker.get_slot("quiz_ans")
+        answer = str(answer).lower()
+        # If the name is super short, it might be wrong.
+        # print(f"First name given =" + first_name + "length = {len(slot_value)}")
+        if answer == "realistic":
+            print("correct")
+            dispatcher.utter_message(text=f"Correct!")
+            return []
+        else:
+            dispatcher.utter_message(text=f"Incorrect, the answer was Realistic")
+            return []
+
+
+class Question2(Action):
+
+    def name(self) -> Text:
+        return "check_q2_filled"
+
+    async def run(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        """Validate `first_name` value."""
+
+        answer = tracker.get_slot("quiz_ans")
+        answer = str(answer).lower()
+        # If the name is super short, it might be wrong.
+        # print(f"First name given =" + first_name + "length = {len(slot_value)}")
+        if answer == "long term goal":
+            dispatcher.utter_message(text=f"Correct!")
+            return []
+        else:
+            dispatcher.utter_message(text=f"Incorrect, the answer was Long Term Goal")
+            return []
+
+
+class Question3(Action):
+
+    def name(self) -> Text:
+        return "check_q3_filled"
+
+    async def run(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        """Validate `first_name` value."""
+
+        answer = tracker.get_slot("quiz_ans")
+        answer = str(answer).lower()
+        # If the name is super short, it might be wrong.
+        # print(f"First name given =" + first_name + "length = {len(slot_value)}")
+        if answer == "achievable":
+            dispatcher.utter_message(text=f"Correct!")
+            return []
+        else:
+            dispatcher.utter_message(text=f"Incorrect, the answer was Achievable")
+            return []
+
+
+class Question4(Action):
+
+    def name(self) -> Text:
+        return "check_q4_filled"
+
+    async def run(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        """Validate `first_name` value."""
+
+        answer = tracker.get_slot("quiz_ans")
+        answer = str(answer).lower()
+        # If the name is super short, it might be wrong.
+        # print(f"First name given =" + first_name + "length = {len(slot_value)}")
+        if answer == "r":
+            dispatcher.utter_message(text=f"Correct!")
+            return []
+        else:
+            dispatcher.utter_message(text=f"Incorrect, the answer was R")
+            return []

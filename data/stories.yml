@@ -362,3 +362,36 @@ stories:
   - intent: out_of_scope
   - action: utter_out_of_scope
   - action: utter_help
+
+- story: quiz_path
+  steps:
+  - intent: want_quiz
+  - action: utter_q1
+  - intent: quiz
+    entities:
+    - quiz_ans: realistic
+  - slot_was_set:
+    - quiz_ans: realistic
+  - action: check_q1_filled
+  - action: utter_q2
+  - intent: quiz
+    entities:
+    - quiz_ans: long term goal
+  - slot_was_set:
+    - quiz_ans: long term goal
+  - action: check_q2_filled
+  - action: utter_q3
+  - intent: quiz
+    entities:
+    - quiz_ans: acheivable
+  - slot_was_set:
+    - quiz_ans: acheivable
+  - action: check_q3_filled
+  - action: utter_q4
+  - intent: quiz
+    entities:
+    - quiz_ans: r
+  - slot_was_set:
+    - quiz_ans: r
+  - action: check_q4_filled
+  - action: utter_well_done

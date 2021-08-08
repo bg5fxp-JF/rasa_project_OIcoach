@@ -32,13 +32,18 @@ intents:
 - mood_great
 - mood_unhappy
 - set_goals
+- quiz
+- want_quiz
 entities:
 - email
 - exercise
 - first_name
 - sleep
 - stress
+- quiz_ans
 slots:
+  quiz_ans:
+    type: text
   first_name:
     type: text
     influence_conversation: false
@@ -107,6 +112,8 @@ responses:
   - text: Check your inbox at {email} ✅
   utter_help:
   - buttons:
+    - payload: /want_quiz
+      title: Today's Quiz
     - payload: /set_goals
       title: Set Goals
     - payload: /ask_course
@@ -424,6 +431,48 @@ responses:
       payload: '/inform{{"stress": "medium"}}'
     - title: High
       payload: '/inform{{"stress": "high"}}'
+
+  utter_q1:
+  - buttons:
+    - payload: '/quiz{{"quiz_ans": "repeatable"}}'
+      title: Repeatable - you must be able to do the goal over and over again.
+    - payload: '/quiz{{"quiz_ans": "responsible"}}'
+      title: Responsible - a goal must allow you to take charge.
+    - payload: '/quiz{{"quiz_ans": "realistic"}}'
+      title: Realistic - you must be able to accomplish the goal
+    text: What does the "R" in SMART stand for?
+  utter_q2:
+  - buttons:
+    - payload: '/quiz{{"quiz_ans": "short term goal"}}'
+      title: Short Term Goal
+    - payload: '/quiz{{"quiz_ans": "long term goal"}}'
+      title: Long Term Goal
+    text: Deciding on which college to attend in two years would be considered a....
+  utter_q3:
+  - buttons:
+    - payload: '/quiz{{"quiz_ans": "academic"}}'
+      title: Academic - a goal must be scholarly and oriented towards learning.
+    - payload: '/quiz{{"quiz_ans": "achievable"}}'
+      title: Achievable - a goal must be reachable; you can do it.
+    - payload: '/quiz{{"quiz_ans": "allowable"}}'
+      title: Allowable - a goal must be something that won't get you in trouble.
+    text: What does the "A" in SMART stand for?
+  utter_q4:
+  - buttons:
+    - payload: '/quiz{{"quiz_ans": "s"}}'
+      title: S
+    - payload: '/quiz{{"quiz_ans": "m"}}'
+      title: M
+    - payload: '/quiz{{"quiz_ans": "a"}}'
+      title: A
+    - payload: '/quiz{{"quiz_ans": "r"}}'
+      title: R
+    - payload: '/quiz{{"quiz_ans": "t"}}'
+      title: T
+    text: Don't ignore your limitations. Your goals need to be tasks that you can reasonably accomplish. Is what?
+
+  utter_well_done:
+  - text: Well Done you have completed today's Quiz ✅
   utter_ask_health_form_goal:
   - text: Setting goals - even small ones - is a great way to focus your day. What do you want to accomplish today 🥇 ?
   utter_slots_value:
@@ -460,6 +509,10 @@ actions:
 - utter_submit
 - validate_email_form
 - validate_name_form
+- check_q1_filled
+- check_q2_filled
+- check_q3_filled
+- check_q4_filled
 forms:
   name_form:
     required_slots:
