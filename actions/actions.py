@@ -46,10 +46,9 @@ class ValidateNameForm(FormValidationAction):
         first_name = tracker.get_slot("first_name")
         # If the name is super short, it might be wrong.
         # print(f"First name given =" + first_name + "length = {len(slot_value)}")
-        if len(first_name) <= 2:
-            dispatcher.utter_message(text="That's a very short name. I'm assuming you mis-spelled.")
-            dispatcher.utter_message(text="Enter your name again please")
-            return [{"first_name": None}]
+        if len(first_name) <= 2 or len(first_name) >= 9:
+            dispatcher.utter_message(text="That's a very interesting name lol but ok...")
+            return [{"first_name": first_name}]
         else:
             return [{"first_name": first_name}]
 

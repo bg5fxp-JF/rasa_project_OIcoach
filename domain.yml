@@ -1,4 +1,6 @@
 version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
@@ -34,6 +36,7 @@ intents:
 - set_goals
 - quiz
 - want_quiz
+- next
 entities:
 - email
 - exercise
@@ -95,6 +98,8 @@ responses:
   - text: Nice.
   utter_submit_no_name:
   - text: Ok. No worries, that is absolutely fine 😅
+  - text: That is cool
+  - text: No worries
   utter_name_value:
   - text: I will remember that your name is {first_name}!
   utter_name_already_given:
@@ -157,7 +162,6 @@ responses:
       For each question that you feels applies to you add a mark.
       At the end you'll have a mark out of 18 for each personality type.
       The mark that you score the highest will be the personality type you relate to most.
-      Ok let's begin.
   utter_realistic:
   - text: |-
       Realistic individuals are active and stable and enjoy hands-on or manual activities, such as building, mechanics, machinery
@@ -417,21 +421,20 @@ responses:
   utter_ask_health_form_confirm_exercise:
   - text: Did you exercise yesterday? Don't sweat it if you didn't run a marathon - walks count!
   utter_ask_health_form_sleep:
-  - text: How much sleep did you get 💤 last night?
+  - text: How many hours of sleep did you get 💤 last night?
   utter_ask_health_form_exercise:
   - text: What kind of exercise did you do?
   utter_ask_health_form_diet:
   - text: Did you stick to a healthy diet 🥦 yesterday?
   utter_ask_health_form_stress:
-  - text: Is your stress level low, medium or high 🧘🏼?
-    buttons:
-    - title: Low
-      payload: '/inform{{"stress": "low"}}'
-    - title: Medium
-      payload: '/inform{{"stress": "medium"}}'
-    - title: High
-      payload: '/inform{{"stress": "high"}}'
-
+  - buttons:
+    - payload: '/inform{{"stress": "low"}}'
+      title: Low
+    - payload: '/inform{{"stress": "medium"}}'
+      title: Medium
+    - payload: '/inform{{"stress": "high"}}'
+      title: High
+    text: Is your stress level low, medium or high 🧘🏼?
   utter_q1:
   - buttons:
     - payload: '/quiz{{"quiz_ans": "repeatable"}}'
@@ -470,7 +473,16 @@ responses:
     - payload: '/quiz{{"quiz_ans": "t"}}'
       title: T
     text: Don't ignore your limitations. Your goals need to be tasks that you can reasonably accomplish. Is what?
-
+  utter_prompt_next:
+  - buttons:
+    - payload: /next
+      title: Next
+    text: Click 'Next' to continue.
+  utter_prompt_begin:
+  - buttons:
+    - payload: /next
+      title: Begin
+    text: Click 'Begin' to start.
   utter_well_done:
   - text: Well Done you have completed today's Quiz ✅
   utter_ask_health_form_goal:
@@ -531,35 +543,35 @@ forms:
   health_form:
     required_slots:
       confirm_exercise:
-      - type: from_intent
-        intent: inform
+      - intent: inform
+        type: from_intent
         value: true
-      - type: from_intent
-        intent: affirm
+      - intent: affirm
+        type: from_intent
         value: true
-      - type: from_intent
-        intent: deny
+      - intent: deny
+        type: from_intent
         value: false
-      exercise:
-      - type: from_entity
-        entity: exercise
-      sleep:
-      - type: from_entity
-        entity: sleep
-      - type: from_intent
-        intent: deny
-        value: None
       diet:
-      - type: from_text
-        intent: inform
-      - type: from_text
-        intent: affirm
-      - type: from_text
-        intent: deny
-      stress:
-      - type: from_entity
-        entity: stress
+      - intent: inform
+        type: from_text
+      - intent: affirm
+        type: from_text
+      - intent: deny
+        type: from_text
+      exercise:
+      - entity: exercise
+        type: from_entity
       goal:
-      - type: from_text
-        intent: inform
+      - intent: inform
+        type: from_text
+      sleep:
+      - entity: sleep
+        type: from_entity
+      - intent: deny
+        type: from_intent
+        value: None
+      stress:
+      - entity: stress
+        type: from_entity
 

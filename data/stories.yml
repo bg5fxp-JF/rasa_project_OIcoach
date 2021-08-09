@@ -22,52 +22,6 @@ stories:
   - intent: deny
   - action: utter_sorry
 
-- story: interactive_story_1_deny
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_ask_permission
-  - intent: affirm
-  - action: utter_ask_name
-  - intent: inform
-  - active_loop: name_form
-  - slot_was_set:
-    - first_name: jacob
-  - slot_was_set:
-    - first_name: jacob
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_submit
-  - action: validate_name_form
-  - slot_was_set:
-    - requested_slot: null
-  - action: utter_name_value
-  - action: utter_start_message
-
-- story: interactive_story_1_affirm
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_ask_permission
-  - intent: affirm
-  - action: utter_ask_name
-  - intent: inform
-  - active_loop: name_form
-  - slot_was_set:
-    - first_name: jacob
-  - slot_was_set:
-    - first_name: jacob
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_submit
-  - action: validate_name_form
-  - slot_was_set:
-    - requested_slot: null
-  - action: utter_name_value
-  - action: utter_start_message
-
 - story: Submit_email_form
   steps:
   - intent: subscribe_to_updates
@@ -85,67 +39,11 @@ stories:
   - intent: ask_course
   - action: utter_inform_course
 
-- story: no name sign up story affirm
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_ask_permission
-  - intent: deny
-  - action: utter_submit_no_name
-  - action: utter_start_message
-  - intent: affirm
-  - action: utter_rules
-  - action: utter_realistic_questions
-  - action: utter_investigative_questions
-  - action: utter_artistic_questions
-  - action: utter_social_questions
-  - action: utter_enteprising_questions
-  - action: utter_conventional_questions
-  - action: utter_ask_score
-
 
 - story: path about time
   steps:
   - intent: give_time
   - action: action_show_time
-
-
-- story: story name 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_ask_permission
-  - intent: affirm
-  - action: utter_ask_name
-  - intent: inform
-  - active_loop: name_form
-  - slot_was_set:
-    - first_name: jacob
-  - slot_was_set:
-    - first_name: jacob
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_submit
-  - action: validate_name_form
-  - action: utter_name_value
-  - action: utter_start_message
-
-- story: invalid name
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_ask_permission
-  - intent: affirm
-  - action: utter_ask_name
-  - intent: inform
-    entities:
-    - first_name: jj
-  - slot_was_set:
-    - first_name: jj
-  - action: utter_submit
-  - action: validate_name_form
-
 
 - story: when ever user asks for their name
   steps:
@@ -154,23 +52,6 @@ stories:
   - intent: deny
   - action: utter_submit_no_name
   - action: utter_work_today
-
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_ask_permission
-  - intent: affirm
-  - action: utter_ask_name
-  - intent: inform
-    entities:
-    - first_name: jacob
-  - slot_was_set:
-    - first_name: jacob
-  - action: utter_submit
-  - action: validate_name_form
-  - action: utter_name_value
-  - action: utter_start_message
 
 - story: request no name fill name
   steps:
@@ -188,28 +69,51 @@ stories:
   - action: utter_name_value
   - action: utter_start_message
 
-
-- story: deny start message
+- story: no name affirm start message
   steps:
   - intent: greet
   - action: utter_greet
   - action: utter_ask_permission
+  - intent: deny
+  - action: utter_submit_no_name
+  - action: utter_start_message
   - intent: affirm
-  - action: utter_ask_name
-  - intent: inform
-    entities:
-    - first_name: coolboy
-  - slot_was_set:
-    - first_name: coolboy
-  - action: utter_submit
-  - action: validate_name_form
-  - action: utter_name_value
+  - action: utter_rules
+  - action: utter_prompt_begin
+  - intent: next
+  - action: utter_realistic_questions
+  - action: utter_prompt_next
+  - intent: next
+  - action: utter_investigative_questions
+  - action: utter_prompt_next
+  - intent: next
+  - action: utter_artistic_questions
+  - action: utter_prompt_next
+  - intent: next
+  - action: utter_social_questions
+  - action: utter_prompt_next
+  - intent: next
+  - action: utter_enteprising_questions
+  - action: utter_prompt_next
+  - intent: next
+  - action: utter_conventional_questions
+  - action: utter_prompt_next
+  - intent: next
+  - action: utter_ask_score
+
+- story: no name deny start message
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_permission
+  - intent: deny
+  - action: utter_submit_no_name
   - action: utter_start_message
   - intent: deny
+  - action: utter_submit_no_name
   - action: utter_work_today
 
-
-- story: affirm start message
+- story: affirm name affirm start message
   steps:
   - intent: greet
   - action: utter_greet
@@ -227,13 +131,47 @@ stories:
   - action: utter_start_message
   - intent: affirm
   - action: utter_rules
+  - action: utter_prompt_begin
+  - intent: next
   - action: utter_realistic_questions
+  - action: utter_prompt_next
+  - intent: next
   - action: utter_investigative_questions
+  - action: utter_prompt_next
+  - intent: next
   - action: utter_artistic_questions
+  - action: utter_prompt_next
+  - intent: next
   - action: utter_social_questions
+  - action: utter_prompt_next
+  - intent: next
   - action: utter_enteprising_questions
+  - action: utter_prompt_next
+  - intent: next
   - action: utter_conventional_questions
+  - action: utter_prompt_next
+  - intent: next
   - action: utter_ask_score
+
+- story: affirm name deny start message
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_permission
+  - intent: affirm
+  - action: utter_ask_name
+  - intent: inform
+    entities:
+    - first_name: jac
+  - slot_was_set:
+    - first_name: jac
+  - action: utter_submit
+  - action: validate_name_form
+  - action: utter_name_value
+  - action: utter_start_message
+  - intent: deny
+  - action: utter_submit_no_name
+  - action: utter_work_today
 
 - story: realistic
   steps:

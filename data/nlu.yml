@@ -280,35 +280,47 @@ nlu:
     - I scored 10 in realistic and that was my highest
     - I scored highest in realistic
     - I'm definitely realistic!
+    - what's realistic
+    - what does it mean to have a realistic peronality
 - intent: investigative
   examples: |
     - i investigative
     - investigative
     - I scored full marks for investigative
     - I am an investigative personality type
+    - what's investigative
+    - what does it mean to have a investigative peronality
 - intent: artistic
   examples: |
     - i am quite artistic
     - I am artsy
     - I scored highest in the artistic department
     - my personality typ is definetly artistic
+    - what's artistic
+    - what does it mean to have a artistic peronality
 - intent: social
   examples: |
     - i am social
     - I like to talk to people alot I guess it explains why i got social
     - I scored 12 in social
+    - what's social
+    - what does it mean to have a social peronality
 - intent: enterprising
   examples: |
     - i am enterprising
     - I scored highest with enterprising
     - full marks in enterprising
     - enterprising
+    - what's enterprising
+    - what does it mean to have a enterprising peronality
 - intent: conventional
   examples: |
     - i am conventional
     - I scored highest with conventional
     - full marks in conventional
     - conventional
+    - what's conventional
+    - what does it mean to have a conventional peronality
 - intent: need_help
   examples: |
     - what do you offer again?
@@ -438,7 +450,6 @@ nlu:
     - This is my email [cool@gmail.com](email)
     - I'd like to subscribe using [jfjf@outlook.com](email)
     - [bryan](first_name)
-    - [hfjksdlhfjklsd](email)
     - [thismyemail.com](email)
     - [hjdfska.com](email)
     - [dhHJK.co.uk](email)
@@ -447,27 +458,33 @@ nlu:
     - [jj](first_name)
     - my name is [oi](first_name)
     - [jf@exampe.com](email)
-    - my name be [jbob](first_name)
-    - my naem is [cooolj](first_name)
+    - my name be [Alan](first_name)
+    - my naem is [david](first_name)
     - you can call me [Dev](first_name)
     - the name is [deno](first_name)
     - [denis](first_name)
-    - my name is [coolboy](first_name)
+    - my name is [mary](first_name)
     - [jack](first_name)
     - a full [8 hours](sleep)
     - only [four hours](sleep)
     - about [six hours](sleep)
+    - [two hrs](sleep)
+    - not alot probably [2hrs](sleep) of sleep
     - [low](stress)
     - [medium](stress)
     - [high](stress) stress right now
     - Yes, I went for a [run](exercise)
     - uh huh an hour of [yoga](exercise)
     - yep, I went for a [hike](exercise)
+    - I went to the [gym](exercise)
     - Yes I took the dog for a [walk](exercise)
     - Yeah, I played [tennis](exercise)
     - I went [swimming](exercise)
     - I went for [walk](exercise)
     - I did [swimming](exercise)
+    - I [swam](exercise)
+    - I [ran](exercise)
+    - I played some [sport](exercise)
     - I went for [cycling](exercise)
     - Took a [spin class](exercise)
     - Did some [boxing](exercise)
@@ -483,6 +500,9 @@ nlu:
     - eat better
     - spend less time on my phone
     - don't procrastinate
+    - Apply to uni by next week
+    - learn a new skill for the month
+    - practice piano everyday
     - Go to bed earlier
     - Don't stay up so late
     - try to make some time to meditate
@@ -499,7 +519,11 @@ nlu:
     - i need to get a job soon
     - i need to eat healthier
     - i want to get better at sport
-    - need to completer work
+    - need to complete work
+    - pass my exams
+    - revise for my test
+    - get my drivers liscense
+    - increase my knowledge
 - intent: give_time
   examples: |
     - can you tell me what time it is
@@ -573,6 +597,7 @@ nlu:
     - I want to set some goals
     - Can I set some goals
     - I want to plan out some goals
+    - goal set
 - intent: find_personality_type
   examples: |
     - tell me about the personality types
@@ -596,6 +621,9 @@ nlu:
     - cool, now tell me what learner I am
     - great now can i have a learner test
     - thanks. I think I want to take a learner test
+    - What are the 6 personality types
+    - what are the personality types
+    - what are personality types
 - intent: want_quiz
   examples: |
     - i want to take quiz
@@ -618,3 +646,9 @@ nlu:
     - [Long term goal](quiz_ans)
     - Is the answer [realistic](quiz_ans)?
     - [Resposible](quiz_ans)
+- intent: next
+  examples: |
+    - next
+    - go to the next one
+    - lets begin
+    - nexxxxtt
