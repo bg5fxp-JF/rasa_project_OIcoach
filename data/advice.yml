@@ -5,12 +5,27 @@ nlu:
     - I need studying advice
     - yeah I could use with some studying advice
     - need tips on studying
+    - I really need help in studying
+    - I'm struggling with my studies, Can you advice on how to get better?
+    - I need some advice on how to get better at studies
+    - Advise me on how to study better
+    - I need to start concentrating more on my studies, how can I?
+    - I always study last minute, help me change this
 - intent: advice/procrastination_tips
   examples: |
-    - I need to stop being a procratinator
+    - I need to stop being a procrastinator, could you give me some tips?
     - any proscrastination tips?
     - advice on procrastinating please
     - I need advice on procrastination
+    - I need some advice on how to stop being lazy
+    - I waste too much time, help me stop this
+    - I barely do any of my work, could you advise me on how to be more efficient
+    - I alwyas leave my work unfinished
+    - I am such a procrastinator
+    - How do I overcome procrastination
+    - Why am I a procrastinaor?
+    - I need advice for getting rid of procrastination
+    - I'm soooo lazy
 - intent: advice/podcast_suggestion
   examples: |
     - Give me a good learning podcast suggestion
@@ -27,6 +42,11 @@ nlu:
     - Do you know of a podcast that can help me?
     - Do you know of a podcast that can better me?
     - podcast suggestion please
+    - Any advice on what sort of podcast I should watch?
+    - I'm very interested in listening to podcasts,suggest me some
+    - I believe podcasts are a great way of learning, it would be great have some suggested
+    - I want to learn new things
+    - I learn better by listening more than reading
 - intent: advice/cv_writing
   examples: |
     - I need help at writing a better CV
