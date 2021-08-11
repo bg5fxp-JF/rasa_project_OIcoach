@@ -99,3 +99,122 @@ nlu:
     - I need advice on how to get guys
     - I need advice on how to get girls
     - I need advice on making freinds
+- intent: advice/pick_subject
+  examples: |
+    - i need advice on picking a subject to study
+    - i'm thinking of studying maths, is that a good idea?
+    - what subject should i pick
+    - can i hav some advice on picking a subject
+    - i need guidance on picking a subject
+- intent: advice/why_maths
+  examples: |
+    - i'm thinking of studying maths, is that a good idea?
+    - Why should i study maths?
+    - can you tell me more about maths
+    - is math a good subject to study
+    - is it a good idea to study maths
+    - shoul i take maths
+    - should i try find a maths course
+    - Is math needed for the future
+- intent: advice/why_art
+  examples: |
+    - i'm thinking of studying maths, is that a good idea?
+    - Why should i study arts and humanities?
+    - is Arts & Humanities a good subject to study
+    - is it a good idea to study maths
+    - shoul i take Arts & Humanities
+    - should i try find a art course
+    - are arts needed for the future
+    - can i hear more about art
+    - can you tell me something about art
+- intent: advice/why_business
+  examples: |
+    - i'm thinking of studying Business, is that a good idea?
+    - Why should i study business?
+    - is business a good subject to study
+    - is it a good idea to study Business
+    - shoul i take business
+    - should i try find a Business course
+    - Is Business needed for the future
+    - can i hear more about business
+    - can you tell me something about business
+- intent: advice/why_compsci
+  examples: |
+    - i'm thinking of studying Computer Science, is that a good idea?
+    - Why should i study programming?
+    - is computer science a good subject to study
+    - is it a good idea to study Computer Science
+    - shoul i take a coding course
+    - should i try find a coding course
+    - Is Computer Science needed for the future
+    - can i hear more about computer science
+    - can you tell me something about computer science
+- intent: advice/why_engineering
+  examples: |
+    - i'm thinking of studying Engineering, is that a good idea?
+    - Why should i study Engineering?
+    - is engineering a good subject to study
+    - is it a good idea to study Engineering
+    - shoul i take an Engineering course
+    - should i try find an engineering course
+    - Is Engineering needed for the future
+    - can i hear more about engineering
+    - can you tell me something about engineering
+- intent: advice/why_health
+  examples: |
+    - i'm thinking of studying health, is that a good idea?
+    - Why should i study pharmacy?
+    - is heath a good subject to study
+    - is it a good idea to study to be a pharmacist
+    - shoul i take a Health course
+    - should i try find a Health course
+    - Is Health needed for the future
+    - can i hear more about health
+    - can you tell me something about health
+- intent: advice/why_social_science
+  examples: |
+    - i'm thinking of studying Social Science, is that a good idea?
+    - Why should i study social science?
+    - is Social Science a good subject to study
+    - is it a good idea to study social science
+    - shoul i take a social Science course
+    - should i try find an Social Science course
+    - Is social science needed for the future
+    - can i hear more about art
+    - can you tell me something about social science
+- intent: advice/affirm
+  examples: |
+    - correct i enjoy that subject
+    - i do
+    - i do like studying Arts & Humanities
+    - i do like studying Business
+    - i do like studying Computer Science
+    - i do like studying Engineering & Science
+    - i do like studying Health
+    - i do like studying maths
+    - i do like studying Personal Development
+    - i do like studying Mathematics
+    - i do like studying Social Science
+- intent: advice/deny
+  examples: |
+    - incorrect i don't enjoy that subject
+    - i don't
+    - i dont
+    - i don't like studying Arts & Humanities
+    - i don't like studying Business
+    - i don't like studying Computer Science
+    - i don't like studying Engineering & Science
+    - i don't like studying Health
+    - i don't like studying maths
+    - i don't like studying Personal Development
+    - i don't like studying Mathematics
+    - i don't like studying Social Science
+- intent: advice/idk
+  examples: |
+    - i'm not sure
+    - i don't know
+    - idk
+    - not sure
+    - i think so
+    - don't really know
+    - no idea
