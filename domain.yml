@@ -213,6 +213,8 @@ responses:
       The mark that you score the highest will be the personality type you relate to most.
   utter_realistic:
   - text: |-
+      So you are Realistic:
+
       Realistic individuals are active and stable and enjoy hands-on or manual activities, such as building, mechanics, machinery
       operation and athletics. They prefer to work with things rather than ideas and people. They enjoy engaging in physical
       activity and often like being outdoors and working with plants and animals. People who fall into this category generally
@@ -223,6 +225,8 @@ responses:
       tangible results. Typical realistic careers include electrician, engineer, veterinarian and the military.
   utter_investigative:
   - text: |-
+      So you are Investigative:
+
       Investigative individuals are analytical, intellectual and observant and enjoy research, mathematical or scientific activities.
       They are drawn to ambiguous challenges and may be stifled in highly structured environments. People who fall into this
       category enjoy using logic and solving highly complex, abstract problems. Because they are introspective and focused on
@@ -233,6 +237,8 @@ responses:
       investigative careers include medical technologist, biologist, chemist and systems analyst.
   utter_artistic:
   - text: |-
+      So you are Artistic:
+
       Artistic individuals are original, intuitive and imaginative and enjoy creative activities, such as composing or playing
       music, writing, drawing or painting and acting in or directing stage productions. They seek opportunities for selfexpression through artistic creation. People who fall into this category prefer flexibility and ambiguity and have an
       aversion to convention and conformity. Artistic types are generally impulsive and emotional and tend to communicate in a
@@ -242,6 +248,8 @@ responses:
       imagination in a flexible, unstructured setting. Typical artistic careers include musician, reporter and interior decorator.
   utter_social:
   - text: |-
+      So you are Social:
+
       Social individuals are humanistic, idealistic, responsible and concerned with the welfare of others. They enjoy participating
       in group activities and helping, training, healing, counseling or developing others. They are generally focused on human
       relationships and enjoy social activities and solving interpersonal problems. Social types seek opportunities to work as part
@@ -252,6 +260,8 @@ responses:
       allows for significant interaction with others. Typical social careers include teacher, counselor and social worker.
   utter_enterprising:
   - text: |-
+      So you are Enterprising:
+
       Enterprising individuals are energetic, ambitious, adventurous, sociable and self-confident. They enjoy activities that
       require them to persuade others, such as sales, and seek out leadership roles. They are invigorated by using their
       interpersonal, leadership and persuasive abilities to obtain organizational goals or economic gain but may avoid routine or
@@ -262,6 +272,8 @@ responses:
       enterprising careers include salesperson, business executive and manager.
   utter_conventional:
   - text: |-
+      So you are Conventional:
+
       Conventional individuals are efficient, careful, conforming, organized and conscientious. They are comfortable working
       within an established chain of command and prefer carrying out well-defined instructions over assuming leadership roles.
       They prefer organized, systematic activities and have an aversion to ambiguity. They are skilled in and often enjoy
@@ -467,23 +479,23 @@ responses:
   - text: You haven't given me your name yet.
   utter_already_sub:
   - text: You have already subscribed
-  utter_ask_health_form_confirm_exercise:
-  - text: Did you exercise yesterday? Don't sweat it if you didn't run a marathon - walks count!
+#  utter_ask_health_form_confirm_exercise:
+#  - text: Did you exercise yesterday? Don't sweat it if you didn't run a marathon - walks count!
   utter_ask_health_form_sleep:
-  - text: How many hours of sleep did you get 💤 last night?
+  - text: Set yourself a sleep goal 💤 (how many hours would you lke to sleep)?
   utter_ask_health_form_exercise:
-  - text: What kind of exercise did you do?
+  - text: Set your fitness goal 💪 (e.g go gym,run,swim etc.)
   utter_ask_health_form_diet:
-  - text: Did you stick to a healthy diet 🥦 yesterday?
-  utter_ask_health_form_stress:
-  - buttons:
-    - payload: '/inform{{"stress": "low"}}'
-      title: Low
-    - payload: '/inform{{"stress": "medium"}}'
-      title: Medium
-    - payload: '/inform{{"stress": "high"}}'
-      title: High
-    text: Is your stress level low, medium or high 🧘🏼?
+  - text: Set yourself a food goal 🥦 (e.g eat healthier)
+#  utter_ask_health_form_stress:
+#  - buttons:
+#    - payload: '/inform{{"stress": "low"}}'
+#      title: Low
+#    - payload: '/inform{{"stress": "medium"}}'
+#      title: Medium
+#    - payload: '/inform{{"stress": "high"}}'
+#      title: High
+#    text: Is your stress level low, medium or high 🧘🏼?
   utter_q1:
   - buttons:
     - payload: '/quiz{{"quiz_ans": "repeatable"}}'
@@ -535,16 +547,14 @@ responses:
   utter_well_done:
   - text: Well Done you have completed today's Quiz ✅
   utter_ask_health_form_goal:
-  - text: Setting goals - even small ones - is a great way to focus your day. What do you want to accomplish today 🥇 ?
+  - text: Finally what do you want to accomplish today 🥇 ? (This can be anything)
   utter_slots_value:
   - text: |-
-      Here's your daily wellness log:
-       - Exercised?: {confirm_exercise}
-       - Type of exercise: {exercise}
-       - Sleep: {sleep}
-       - Stuck to a healthy diet?: {diet}
-       - Stress level: {stress}
-       - Goal: {goal}
+      Here are your goals:
+       - Exercise Goal: {exercise}
+       - Sleep Goal: {sleep}
+       - Diet Goal: {diet}
+       - Today's Goal: {goal}
 actions:
 - action_show_time
 - change_name_filled
@@ -591,36 +601,20 @@ forms:
         type: from_text
   health_form:
     required_slots:
-      confirm_exercise:
-      - intent: inform
-        type: from_intent
-        value: true
-      - intent: affirm
-        type: from_intent
-        value: true
-      - intent: deny
-        type: from_intent
-        value: false
-      diet:
-      - intent: inform
-        type: from_text
-      - intent: affirm
-        type: from_text
-      - intent: deny
-        type: from_text
       exercise:
       - entity: exercise
         type: from_entity
-      goal:
-      - intent: inform
-        type: from_text
       sleep:
       - entity: sleep
         type: from_entity
       - intent: deny
         type: from_intent
         value: None
-      stress:
-      - entity: stress
-        type: from_entity
+      diet:
+      - intent: inform
+        type: from_text
+      goal:
+      - intent: inform
+        type: from_text
+
 e2e_actions: []

@@ -177,42 +177,42 @@ stories:
   steps:
   - action: utter_ask_score
   - intent: realistic
-  - action: utter_make_note
+  - action: utter_realistic
   - action: utter_work_today
 
 - story: investigative
   steps:
   - action: utter_ask_score
   - intent: investigative
-  - action: utter_make_note
+  - action: utter_investigative
   - action: utter_work_today
 
 - story: artistic
   steps:
   - action: utter_ask_score
   - intent: artistic
-  - action: utter_make_note
+  - action: utter_artistic
   - action: utter_work_today
 
 - story: social
   steps:
   - action: utter_ask_score
   - intent: social
-  - action: utter_make_note
+  - action: utter_social
   - action: utter_work_today
 
 - story: enterprising
   steps:
   - action: utter_ask_score
   - intent: enterprising
-  - action: utter_make_note
+  - action: utter_enterprising
   - action: utter_work_today
 
 - story: conventional
   steps:
   - action: utter_ask_score
   - intent: conventional
-  - action: utter_make_note
+  - action: utter_conventional
   - action: utter_work_today
 
 - story: Sad Path 1 - Retry

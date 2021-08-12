@@ -611,6 +611,26 @@ nlu:
     - revise for my test
     - get my drivers liscense
     - increase my knowledge
+    - Improve your growth mindset.
+    - Be more proactive.
+    - Learn to understand yourself.
+    - Be persistent despite obstacles.
+    - Learn to accept your limits.
+    - Learn how to make effective decisions.
+    - Practice gratitude.
+    - Stay open-minded to new opportunities.
+    - Learn something new.
+    - Live according to your values.
+    - Learn healthy ways to cope with stress.
+    - Recreate your work-life balance.
+    - Start good habits.
+    - Consider leaving behind expectations.
+    - Learn from failure.
+    - Eliminate bad habits.
+    - Improve your communication skills.
+    - Avoid negativity in the workplace.
+    - Improve your financial management skills.
+    - Develop time management skills.
 - intent: give_time
   examples: |
     - can you tell me what time it is

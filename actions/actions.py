@@ -23,10 +23,7 @@ class ValidateHealthForm(FormValidationAction):
             tracker: "Tracker",
             domain: "DomainDict"
     ) -> List[Text]:
-        if tracker.get_slot("confirm_exercise") == True:
-            return ["confirm_exercise", "exercise", "sleep", "diet", "stress", "goal"]
-        else:
-            return ["confirm_exercise", "sleep", "diet", "stress", "goal"]
+        return ["exercise", "sleep", "diet", "goal"]
 
 
 class ValidateNameForm(FormValidationAction):
