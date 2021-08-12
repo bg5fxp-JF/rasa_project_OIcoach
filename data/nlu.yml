@@ -276,7 +276,7 @@ nlu:
     - Do you offer courses on Engineering and Science?
 - intent: realistic
   examples: |
-    - i am a realistic
+    - i am realistic
     - i'm a realist
     - I scored highest in realistic so I beleive I'm that
     - I scored 10 in realistic and that was my highest
