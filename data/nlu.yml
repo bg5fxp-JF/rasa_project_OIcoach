@@ -1,5 +1,6 @@
 version: "2.0"
 nlu:
+
 - intent: greet
   examples: |
     - Hi
@@ -707,9 +708,13 @@ nlu:
     - cool, now tell me what learner I am
     - great now can i have a learner test
     - thanks. I think I want to take a learner test
-    - What are the 6 personality types
+    - What are Holland's 6 personality types
     - what are the personality types
     - what are personality types
+    - what are the personalities
+    - could you tell me about the six personalities
+    - I would like to know about the personalities
+    - Can you tell me about Hollands 6 personalties
 - intent: want_quiz
   examples: |
     - i want to take quiz

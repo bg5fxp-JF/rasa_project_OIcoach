@@ -6,37 +6,65 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - advice:
-    is_retrieval_intent: true
+    use_entities: true
 - chitchat:
-    is_retrieval_intent: true
+    use_entities: true
 - out_of_scope:
-    is_retrieval_intent: true
-- greet
-- inform
-- affirm
-- request_names
-- deny
-- give_time
-- subscribe_to_updates
-- thankyou
-- read_write_learner
-- ask_learning_type
-- find_personality_type
-- need_help
-- realistic
-- investigative
-- artistic
-- social
-- enterprising
-- conventional
-- ask_course
-- goodbye
-- mood_great
-- mood_unhappy
-- set_goals
-- quiz
-- want_quiz
-- next
+    use_entities: true
+- greet:
+    use_entities: true
+- inform:
+    use_entities: true
+- affirm:
+    use_entities: true
+- request_names:
+    use_entities: true
+- deny:
+    use_entities: true
+- give_time:
+    use_entities: true
+- subscribe_to_updates:
+    use_entities: true
+- thankyou:
+    use_entities: true
+- read_write_learner:
+    use_entities: true
+- ask_learning_type:
+    use_entities: true
+- find_personality_type:
+    use_entities: true
+- need_help:
+    use_entities: true
+- realistic:
+    use_entities: true
+- investigative:
+    use_entities: true
+- artistic:
+    use_entities: true
+- social:
+    use_entities: true
+- enterprising:
+    use_entities: true
+- conventional:
+    use_entities: true
+- ask_course:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- set_goals:
+    use_entities: true
+- quiz:
+    use_entities: true
+- want_quiz:
+    use_entities: true
+- next:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
 entities:
 - email
 - exercise
@@ -46,33 +74,54 @@ entities:
 - quiz_ans
 slots:
   quiz_ans:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   first_name:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   email:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   requested_slot:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   confirm_exercise:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   exercise:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   sleep:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   diet:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   stress:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   goal:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
 responses:
   utter_greet:
@@ -574,4 +623,4 @@ forms:
       stress:
       - entity: stress
         type: from_entity
-
+e2e_actions: []

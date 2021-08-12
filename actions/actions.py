@@ -11,10 +11,6 @@ from rasa_sdk.types import DomainDict
 names = pathlib.Path("data/names.txt").read_text().split("\n")
 
 
-# import spacy
-
-# nlp = spacy.load("en_core_web_sm")
-
 class ValidateHealthForm(FormValidationAction):
 
     def name(self) -> Text:
