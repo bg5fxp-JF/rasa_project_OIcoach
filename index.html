@@ -1,0 +1,33 @@
+<html>
+    <body>
+<!--    <style>-->
+<!--        .rw-conversation-container .rw-header{background-color: #2bad96;}-->
+<!--        .rw-send{background-color: #2bad96;}-->
+<!--        .rw-conversation-container .rw-messages-container .rw-message .rw-client{background-color: #2bad96;}-->
+<!--        .rw-launcher{background-color: #2bad96;}-->
+<!--    </style>-->
+        <h1>OI Chat Bot</h1>
+        <script>!(function () {
+          let e = document.createElement("script"),
+            t = document.head || document.getElementsByTagName("head")[0];
+          (e.src =
+            "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.0/lib/index.js"),
+            // Replace 1.x.x with the version that you want
+            (e.async = !0),
+            (e.onload = () => {
+              window.WebChat.default(
+                {
+                  customData: { language: "en" },
+                  socketUrl: "http://localhost:5005/callback/socket.io",
+                  hideWhenNotConnected: false
+                  // add other props here
+                },
+                null
+              );
+            }),
+            t.insertBefore(e, t.firstChild);
+        })();
+        </script>
+
+    </body>
+</html>

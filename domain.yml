@@ -479,23 +479,12 @@ responses:
   - text: You haven't given me your name yet.
   utter_already_sub:
   - text: You have already subscribed
-#  utter_ask_health_form_confirm_exercise:
-#  - text: Did you exercise yesterday? Don't sweat it if you didn't run a marathon - walks count!
   utter_ask_health_form_sleep:
   - text: Set yourself a sleep goal 💤 (how many hours would you lke to sleep)?
   utter_ask_health_form_exercise:
   - text: Set your fitness goal 💪 (e.g go gym,run,swim etc.)
   utter_ask_health_form_diet:
   - text: Set yourself a food goal 🥦 (e.g eat healthier)
-#  utter_ask_health_form_stress:
-#  - buttons:
-#    - payload: '/inform{{"stress": "low"}}'
-#      title: Low
-#    - payload: '/inform{{"stress": "medium"}}'
-#      title: Medium
-#    - payload: '/inform{{"stress": "high"}}'
-#      title: High
-#    text: Is your stress level low, medium or high 🧘🏼?
   utter_q1:
   - buttons:
     - payload: '/quiz{{"quiz_ans": "repeatable"}}'
@@ -601,20 +590,19 @@ forms:
         type: from_text
   health_form:
     required_slots:
+      diet:
+      - intent: inform
+        type: from_text
       exercise:
       - entity: exercise
         type: from_entity
+      goal:
+      - intent: inform
+        type: from_text
       sleep:
       - entity: sleep
         type: from_entity
       - intent: deny
         type: from_intent
         value: None
-      diet:
-      - intent: inform
-        type: from_text
-      goal:
-      - intent: inform
-        type: from_text
-
 e2e_actions: []
