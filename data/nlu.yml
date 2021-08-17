@@ -1,6 +1,5 @@
 version: "2.0"
 nlu:
-
 - intent: greet
   examples: |
     - Hi
@@ -564,6 +563,10 @@ nlu:
     - uh huh an hour of [yoga](exercise)
     - yep, I went for a [hike](exercise)
     - I went to the [gym](exercise)
+    - [lose weight](exercise)
+    - [gain muscle](exercise)
+    - [become fit](exercise)
+    - [get skinny](exercise)
     - Yes I took the dog for a [walk](exercise)
     - Yeah, I played [tennis](exercise)
     - I went [swimming](exercise)
@@ -578,6 +581,8 @@ nlu:
     - [rock climbing](exercise)
     - played some [basketball](exercise)
     - played [football](exercise)
+    - [cricket](exercise)
+    - [polo](exercise)
     - I did a [workout](exercise) video
     - I want to get up early and go for a run
     - Be more patient with my family
@@ -631,6 +636,23 @@ nlu:
     - Avoid negativity in the workplace.
     - Improve your financial management skills.
     - Develop time management skills.
+    - success
+    - make more money
+    - become rich
+    - be filthy rich
+    - improve my wealth
+    - become wealthier
+    - be richer
+    - become a business man
+    - acheive my dreams
+    - make the nba
+    - play in the premier league
+    - be the richest man in the world
+    - become smart
+    - ultimate success
+    - be successful
+    - be a good person
+    - my name is [bronson](first_name)
 - intent: give_time
   examples: |
     - can you tell me what time it is

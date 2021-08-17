@@ -69,38 +69,6 @@ stories:
   - action: utter_name_value
   - action: utter_start_message
 
-- story: no name affirm start message
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_ask_permission
-  - intent: deny
-  - action: utter_submit_no_name
-  - action: utter_start_message
-  - intent: affirm
-  - action: utter_rules
-  - action: utter_prompt_begin
-  - intent: next
-  - action: utter_realistic_questions
-  - action: utter_prompt_next
-  - intent: next
-  - action: utter_investigative_questions
-  - action: utter_prompt_next
-  - intent: next
-  - action: utter_artistic_questions
-  - action: utter_prompt_next
-  - intent: next
-  - action: utter_social_questions
-  - action: utter_prompt_next
-  - intent: next
-  - action: utter_enteprising_questions
-  - action: utter_prompt_next
-  - intent: next
-  - action: utter_conventional_questions
-  - action: utter_prompt_next
-  - intent: next
-  - action: utter_ask_score
-
 - story: no name deny start message
   steps:
   - intent: greet
@@ -112,46 +80,6 @@ stories:
   - intent: deny
   - action: utter_submit_no_name
   - action: utter_work_today
-
-- story: affirm name affirm start message
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - action: utter_ask_permission
-  - intent: affirm
-  - action: utter_ask_name
-  - intent: inform
-    entities:
-    - first_name: jac
-  - slot_was_set:
-    - first_name: jac
-  - action: utter_submit
-  - action: validate_name_form
-  - action: utter_name_value
-  - action: utter_start_message
-  - intent: affirm
-  - action: utter_rules
-  - action: utter_prompt_begin
-  - intent: next
-  - action: utter_realistic_questions
-  - action: utter_prompt_next
-  - intent: next
-  - action: utter_investigative_questions
-  - action: utter_prompt_next
-  - intent: next
-  - action: utter_artistic_questions
-  - action: utter_prompt_next
-  - intent: next
-  - action: utter_social_questions
-  - action: utter_prompt_next
-  - intent: next
-  - action: utter_enteprising_questions
-  - action: utter_prompt_next
-  - intent: next
-  - action: utter_conventional_questions
-  - action: utter_prompt_next
-  - intent: next
-  - action: utter_ask_score
 
 - story: affirm name deny start message
   steps:
@@ -171,48 +99,6 @@ stories:
   - action: utter_start_message
   - intent: deny
   - action: utter_submit_no_name
-  - action: utter_work_today
-
-- story: realistic
-  steps:
-  - action: utter_ask_score
-  - intent: realistic
-  - action: utter_realistic
-  - action: utter_work_today
-
-- story: investigative
-  steps:
-  - action: utter_ask_score
-  - intent: investigative
-  - action: utter_investigative
-  - action: utter_work_today
-
-- story: artistic
-  steps:
-  - action: utter_ask_score
-  - intent: artistic
-  - action: utter_artistic
-  - action: utter_work_today
-
-- story: social
-  steps:
-  - action: utter_ask_score
-  - intent: social
-  - action: utter_social
-  - action: utter_work_today
-
-- story: enterprising
-  steps:
-  - action: utter_ask_score
-  - intent: enterprising
-  - action: utter_enterprising
-  - action: utter_work_today
-
-- story: conventional
-  steps:
-  - action: utter_ask_score
-  - intent: conventional
-  - action: utter_conventional
   - action: utter_work_today
 
 - story: Sad Path 1 - Retry
@@ -333,3 +219,558 @@ stories:
     - quiz_ans: r
   - action: check_q4_filled
   - action: utter_well_done
+
+- story: no name affirm start message
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_permission
+  - intent: deny
+  - action: utter_submit_no_name
+  - action: utter_start_message
+  - intent: affirm
+  - action: utter_rules
+  - action: utter_prompt_begin
+  - intent: next
+  - action: realistic_form
+  - active_loop: realistic_form
+  - slot_was_set:
+    - requested_slot: practical
+  - slot_was_set:
+    - practical: yes
+  - slot_was_set:
+    - requested_slot: athletic
+  - slot_was_set:
+    - athletic: yes
+  - slot_was_set:
+    - requested_slot: straightforward
+  - slot_was_set:
+    - straightforward: yes
+  - slot_was_set:
+    - requested_slot: mechanicalproblem
+  - slot_was_set:
+    - mechanicalproblem: yes
+  - slot_was_set:
+    - requested_slot: pitchatent
+  - slot_was_set:
+    - pitchatent: yes
+  - slot_was_set:
+    - requested_slot: playsport
+  - slot_was_set:
+    - playsport: yes
+  - slot_was_set:
+    - requested_slot: tinkermachine
+  - slot_was_set:
+    - tinkermachine: yes
+  - slot_was_set:
+    - requested_slot: workoutdoor
+  - slot_was_set:
+    - workoutdoor: yes
+  - slot_was_set:
+    - requested_slot: physcialactive
+  - slot_was_set:
+    - physcialactive: yes
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_prompt_next
+  - intent: next
+  - action: investigative_form
+  - active_loop: investigative_form
+  - slot_was_set:
+    - requested_slot: inquisitive
+  - slot_was_set:
+    - inquisitive: no
+  - slot_was_set:
+    - requested_slot: analytical
+  - slot_was_set:
+    - analytical: yes
+  - slot_was_set:
+    - requested_slot: scientific
+  - slot_was_set:
+    - scientific: yes
+  - slot_was_set:
+    - requested_slot: abstractly
+  - slot_was_set:
+    - abstractly: yes
+  - slot_was_set:
+    - requested_slot: mathproblem
+  - slot_was_set:
+    - mathproblem: yes
+  - slot_was_set:
+    - requested_slot: physicstheories
+  - slot_was_set:
+    - physicstheories: yes
+  - slot_was_set:
+    - requested_slot: exploreidea
+  - slot_was_set:
+    - exploreidea: yes
+  - slot_was_set:
+    - requested_slot: usecomputer
+  - slot_was_set:
+    - usecomputer: yes
+  - slot_was_set:
+    - requested_slot: workindepen
+  - slot_was_set:
+    - workindepen: yes
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_prompt_next
+  - intent: next
+  - action: artistic_form
+  - active_loop: artistic_form
+  - slot_was_set:
+    - requested_slot: creative
+  - slot_was_set:
+    - creative: no
+  - slot_was_set:
+    - requested_slot: intuitive
+  - slot_was_set:
+    - intuitive: no
+  - slot_was_set:
+    - requested_slot: imaginative
+  - slot_was_set:
+    - imaginative: yes
+  - slot_was_set:
+    - requested_slot: sketch
+  - slot_was_set:
+    - sketch: yes
+  - slot_was_set:
+    - requested_slot: intuition
+  - slot_was_set:
+    - intuition: yes
+  - slot_was_set:
+    - requested_slot: musical
+  - slot_was_set:
+    - musical: yes
+  - slot_was_set:
+    - requested_slot: originalways
+  - slot_was_set:
+    - originalways: yes
+  - slot_was_set:
+    - requested_slot: fiction
+  - slot_was_set:
+    - fiction: yes
+  - slot_was_set:
+    - requested_slot: verbalabilities
+  - slot_was_set:
+    - verbalabilities: yes
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_prompt_next
+  - intent: next
+  - action: social_form
+  - active_loop: social_form
+  - slot_was_set:
+    - requested_slot: friendly
+  - slot_was_set:
+    - friendly: no
+  - slot_was_set:
+    - requested_slot: helpful
+  - slot_was_set:
+    - helpful: no
+  - slot_was_set:
+    - requested_slot: idealistic
+  - slot_was_set:
+    - idealistic: no
+  - slot_was_set:
+    - requested_slot: trainothers
+  - slot_was_set:
+    - trainothers: yes
+  - slot_was_set:
+    - requested_slot: feelingclearly
+  - slot_was_set:
+    - feelingclearly: yes
+  - slot_was_set:
+    - requested_slot: groupdiscussion
+  - slot_was_set:
+    - groupdiscussion: yes
+  - slot_was_set:
+    - requested_slot: interpersonalskills
+  - slot_was_set:
+    - interpersonalskills: yes
+  - slot_was_set:
+    - requested_slot: helppeople
+  - slot_was_set:
+    - helppeople: yes
+  - slot_was_set:
+    - requested_slot: leadgroups
+  - slot_was_set:
+    - leadgroups: yes
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_prompt_next
+  - intent: next
+  - action: enterprising_form
+  - active_loop: enterprising_form
+  - slot_was_set:
+    - requested_slot: selfconfident
+  - slot_was_set:
+    - selfconfident: no
+  - slot_was_set:
+    - requested_slot: asser
+  - slot_was_set:
+    - asser: no
+  - slot_was_set:
+    - requested_slot: sociable
+  - slot_was_set:
+    - sociable: no
+  - slot_was_set:
+    - requested_slot: initiativeprojects
+  - slot_was_set:
+    - initiativeprojects: no
+  - slot_was_set:
+    - requested_slot: thingsyourway
+  - slot_was_set:
+    - thingsyourway: yes
+  - slot_was_set:
+    - requested_slot: promoteideas
+  - slot_was_set:
+    - promoteideas: yes
+  - slot_was_set:
+    - requested_slot: affectingothers
+  - slot_was_set:
+    - affectingothers: yes
+  - slot_was_set:
+    - requested_slot: energyordrive
+  - slot_was_set:
+    - energyordrive: yes
+  - slot_was_set:
+    - requested_slot: speechesortalks
+  - slot_was_set:
+    - speechesortalks: yes
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_prompt_next
+  - intent: next
+  - action: conventional_form
+  - active_loop: conventional_form
+  - slot_was_set:
+    - requested_slot: detailsandnumbers
+  - slot_was_set:
+    - detailsandnumbers: no
+  - slot_was_set:
+    - requested_slot: numbercrunching
+  - slot_was_set:
+    - numbercrunching: no
+  - slot_was_set:
+    - requested_slot: methodical
+  - slot_was_set:
+    - methodical: no
+  - slot_was_set:
+    - requested_slot: systemororganisation
+  - slot_was_set:
+    - systemororganisation: no
+  - slot_was_set:
+    - requested_slot: writereports
+  - slot_was_set:
+    - writereports: no
+  - slot_was_set:
+    - requested_slot: accuraterecords
+  - slot_was_set:
+    - accuraterecords: no
+  - slot_was_set:
+    - requested_slot: definedprocedures
+  - slot_was_set:
+    - definedprocedures: yes
+  - slot_was_set:
+    - requested_slot: tablesandgraphs
+  - slot_was_set:
+    - tablesandgraphs: yes
+  - slot_was_set:
+    - requested_slot: workwithnumbers
+  - slot_was_set:
+    - workwithnumbers: no
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_prompt_finish
+  - intent: next
+  - action: action_submit_all_forms_calc_score
+  - action: utter_work_today
+
+
+- story: name affirm start message
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask_permission
+  - intent: affirm
+  - action: utter_ask_name
+  - intent: inform
+    entities:
+    - first_name: bronson
+  - slot_was_set:
+    - first_name: bronson
+  - action: utter_submit
+  - action: validate_name_form
+  - action: utter_name_value
+  - action: utter_start_message
+  - intent: affirm
+  - action: utter_rules
+  - action: utter_prompt_begin
+  - intent: next
+  - action: realistic_form
+  - active_loop: realistic_form
+  - slot_was_set:
+    - requested_slot: practical
+  - slot_was_set:
+    - practical: yes
+  - slot_was_set:
+    - requested_slot: athletic
+  - slot_was_set:
+    - athletic: yes
+  - slot_was_set:
+    - requested_slot: straightforward
+  - slot_was_set:
+    - straightforward: yes
+  - slot_was_set:
+    - requested_slot: mechanicalproblem
+  - slot_was_set:
+    - mechanicalproblem: yes
+  - slot_was_set:
+    - requested_slot: pitchatent
+  - slot_was_set:
+    - pitchatent: yes
+  - slot_was_set:
+    - requested_slot: playsport
+  - slot_was_set:
+    - playsport: yes
+  - slot_was_set:
+    - requested_slot: tinkermachine
+  - slot_was_set:
+    - tinkermachine: yes
+  - slot_was_set:
+    - requested_slot: workoutdoor
+  - slot_was_set:
+    - workoutdoor: yes
+  - slot_was_set:
+    - requested_slot: physcialactive
+  - slot_was_set:
+    - physcialactive: yes
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_prompt_next
+  - intent: next
+  - action: investigative_form
+  - active_loop: investigative_form
+  - slot_was_set:
+    - requested_slot: inquisitive
+  - slot_was_set:
+    - inquisitive: no
+  - slot_was_set:
+    - requested_slot: analytical
+  - slot_was_set:
+    - analytical: yes
+  - slot_was_set:
+    - requested_slot: scientific
+  - slot_was_set:
+    - scientific: yes
+  - slot_was_set:
+    - requested_slot: abstractly
+  - slot_was_set:
+    - abstractly: yes
+  - slot_was_set:
+    - requested_slot: mathproblem
+  - slot_was_set:
+    - mathproblem: yes
+  - slot_was_set:
+    - requested_slot: physicstheories
+  - slot_was_set:
+    - physicstheories: yes
+  - slot_was_set:
+    - requested_slot: exploreidea
+  - slot_was_set:
+    - exploreidea: yes
+  - slot_was_set:
+    - requested_slot: usecomputer
+  - slot_was_set:
+    - usecomputer: yes
+  - slot_was_set:
+    - requested_slot: workindepen
+  - slot_was_set:
+    - workindepen: yes
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_prompt_next
+  - intent: next
+  - action: artistic_form
+  - active_loop: artistic_form
+  - slot_was_set:
+    - requested_slot: creative
+  - slot_was_set:
+    - creative: no
+  - slot_was_set:
+    - requested_slot: intuitive
+  - slot_was_set:
+    - intuitive: no
+  - slot_was_set:
+    - requested_slot: imaginative
+  - slot_was_set:
+    - imaginative: yes
+  - slot_was_set:
+    - requested_slot: sketch
+  - slot_was_set:
+    - sketch: yes
+  - slot_was_set:
+    - requested_slot: intuition
+  - slot_was_set:
+    - intuition: yes
+  - slot_was_set:
+    - requested_slot: musical
+  - slot_was_set:
+    - musical: yes
+  - slot_was_set:
+    - requested_slot: originalways
+  - slot_was_set:
+    - originalways: yes
+  - slot_was_set:
+    - requested_slot: fiction
+  - slot_was_set:
+    - fiction: yes
+  - slot_was_set:
+    - requested_slot: verbalabilities
+  - slot_was_set:
+    - verbalabilities: yes
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_prompt_next
+  - intent: next
+  - action: social_form
+  - active_loop: social_form
+  - slot_was_set:
+    - requested_slot: friendly
+  - slot_was_set:
+    - friendly: no
+  - slot_was_set:
+    - requested_slot: helpful
+  - slot_was_set:
+    - helpful: no
+  - slot_was_set:
+    - requested_slot: idealistic
+  - slot_was_set:
+    - idealistic: no
+  - slot_was_set:
+    - requested_slot: trainothers
+  - slot_was_set:
+    - trainothers: yes
+  - slot_was_set:
+    - requested_slot: feelingclearly
+  - slot_was_set:
+    - feelingclearly: yes
+  - slot_was_set:
+    - requested_slot: groupdiscussion
+  - slot_was_set:
+    - groupdiscussion: yes
+  - slot_was_set:
+    - requested_slot: interpersonalskills
+  - slot_was_set:
+    - interpersonalskills: yes
+  - slot_was_set:
+    - requested_slot: helppeople
+  - slot_was_set:
+    - helppeople: yes
+  - slot_was_set:
+    - requested_slot: leadgroups
+  - slot_was_set:
+    - leadgroups: yes
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_prompt_next
+  - intent: next
+  - action: enterprising_form
+  - active_loop: enterprising_form
+  - slot_was_set:
+    - requested_slot: selfconfident
+  - slot_was_set:
+    - selfconfident: no
+  - slot_was_set:
+    - requested_slot: asser
+  - slot_was_set:
+    - asser: no
+  - slot_was_set:
+    - requested_slot: sociable
+  - slot_was_set:
+    - sociable: no
+  - slot_was_set:
+    - requested_slot: initiativeprojects
+  - slot_was_set:
+    - initiativeprojects: no
+  - slot_was_set:
+    - requested_slot: thingsyourway
+  - slot_was_set:
+    - thingsyourway: yes
+  - slot_was_set:
+    - requested_slot: promoteideas
+  - slot_was_set:
+    - promoteideas: yes
+  - slot_was_set:
+    - requested_slot: affectingothers
+  - slot_was_set:
+    - affectingothers: yes
+  - slot_was_set:
+    - requested_slot: energyordrive
+  - slot_was_set:
+    - energyordrive: yes
+  - slot_was_set:
+    - requested_slot: speechesortalks
+  - slot_was_set:
+    - speechesortalks: yes
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_prompt_next
+  - intent: next
+  - action: conventional_form
+  - active_loop: conventional_form
+  - slot_was_set:
+    - requested_slot: detailsandnumbers
+  - slot_was_set:
+    - detailsandnumbers: no
+  - slot_was_set:
+    - requested_slot: numbercrunching
+  - slot_was_set:
+    - numbercrunching: no
+  - slot_was_set:
+    - requested_slot: methodical
+  - slot_was_set:
+    - methodical: no
+  - slot_was_set:
+    - requested_slot: systemororganisation
+  - slot_was_set:
+    - systemororganisation: no
+  - slot_was_set:
+    - requested_slot: writereports
+  - slot_was_set:
+    - writereports: no
+  - slot_was_set:
+    - requested_slot: accuraterecords
+  - slot_was_set:
+    - accuraterecords: no
+  - slot_was_set:
+    - requested_slot: definedprocedures
+  - slot_was_set:
+    - definedprocedures: yes
+  - slot_was_set:
+    - requested_slot: tablesandgraphs
+  - slot_was_set:
+    - tablesandgraphs: yes
+  - slot_was_set:
+    - requested_slot: workwithnumbers
+  - slot_was_set:
+    - workwithnumbers: no
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_prompt_finish
+  - intent: next
+  - action: action_submit_all_forms_calc_score
+  - action: utter_work_today

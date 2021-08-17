@@ -77,8 +77,11 @@ responses:
   - text: I can't help you with that, I'm sorry.
   - text: Sorry, I can't handle that request.
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
-  - text: Sorry I didn't get that. Can you rephrase?
   - text: Sorry, can't help you there lol, I'm only a bot
+  - text: I have nooo idea what you mean, can't help you there mate.
+  - text: Nahh too much for me, ask my big brother www.google.com He'll be able to help you out
+  - text: That literally went through one of my ear and out the other,sorry my friend
+  - text: Just swinged past my head. I ain't got a clue what you mean
   utter_chitchat/ask_howbuilt:
   - text: I was built with a lot of love and patience.
   - text: Well, when two chatbots love each other very much...

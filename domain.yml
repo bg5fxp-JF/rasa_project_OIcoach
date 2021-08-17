@@ -1,128 +1,241 @@
 version: '2.0'
-config:
-  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- advice:
-    use_entities: true
-- chitchat:
-    use_entities: true
+- inform
+- deny
+- next
+- greet
+- affirm
 - out_of_scope:
-    use_entities: true
-- greet:
-    use_entities: true
-- inform:
-    use_entities: true
-- affirm:
-    use_entities: true
-- request_names:
-    use_entities: true
-- deny:
-    use_entities: true
-- give_time:
-    use_entities: true
-- subscribe_to_updates:
-    use_entities: true
-- thankyou:
-    use_entities: true
-- read_write_learner:
-    use_entities: true
-- ask_learning_type:
-    use_entities: true
-- find_personality_type:
-    use_entities: true
-- need_help:
-    use_entities: true
-- realistic:
-    use_entities: true
-- investigative:
-    use_entities: true
-- artistic:
-    use_entities: true
-- social:
-    use_entities: true
-- enterprising:
-    use_entities: true
-- conventional:
-    use_entities: true
-- ask_course:
-    use_entities: true
-- goodbye:
-    use_entities: true
-- mood_great:
-    use_entities: true
-- mood_unhappy:
-    use_entities: true
-- set_goals:
-    use_entities: true
-- quiz:
-    use_entities: true
-- want_quiz:
-    use_entities: true
-- next:
-    use_entities: true
-- nlu_fallback:
-    use_entities: true
+    is_retrieval_intent: true
+- chitchat:
+    is_retrieval_intent: true
+- advice:
+    is_retrieval_intent: true
+- request_names
+- give_time
+- subscribe_to_updates
+- thankyou
+- read_write_learner
+- ask_learning_type
+- find_personality_type
+- need_help
+- realistic
+- investigative
+- artistic
+- social
+- enterprising
+- conventional
+- ask_course
+- goodbye
+- mood_great
+- mood_unhappy
+- set_goals
+- quiz
+- want_quiz
+- nlu_fallback
 entities:
 - email
 - exercise
 - first_name
+- quiz_ans
 - sleep
 - stress
-- quiz_ans
 slots:
   quiz_ans:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
+    type: text
     influence_conversation: true
   first_name:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
+    type: text
     influence_conversation: false
   email:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
+    type: text
     influence_conversation: false
   requested_slot:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
+    type: text
     influence_conversation: false
   confirm_exercise:
-    type: rasa.shared.core.slots.BooleanSlot
-    initial_value: null
-    auto_fill: true
+    type: bool
     influence_conversation: false
   exercise:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
+    type: text
     influence_conversation: false
   sleep:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
+    type: text
     influence_conversation: false
   diet:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
+    type: text
     influence_conversation: false
   stress:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
+    type: text
     influence_conversation: false
   goal:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
+    type: text
     influence_conversation: false
+  practical:
+    type: text
+    influence_conversation: true
+  athletic:
+    type: text
+    influence_conversation: true
+  straightforward:
+    type: text
+    influence_conversation: true
+  mechanicalproblem:
+    type: text
+    influence_conversation: true
+  pitchatent:
+    type: text
+    influence_conversation: true
+  playsport:
+    type: text
+    influence_conversation: true
+  tinkermachine:
+    type: text
+    influence_conversation: true
+  workoutdoor:
+    type: text
+    influence_conversation: true
+  physcialactive:
+    type: text
+    influence_conversation: true
+  inquisitive:
+    type: text
+    influence_conversation: true
+  analytical:
+    type: text
+    influence_conversation: true
+  scientific:
+    type: text
+    influence_conversation: true
+  abstractly:
+    type: text
+    influence_conversation: true
+  mathproblem:
+    type: text
+    influence_conversation: true
+  physicstheories:
+    type: text
+    influence_conversation: true
+  exploreidea:
+    type: text
+    influence_conversation: true
+  usecomputer:
+    type: text
+    influence_conversation: true
+  workindepen:
+    type: text
+    influence_conversation: true
+  creative:
+    type: text
+    influence_conversation: true
+  intuitive:
+    type: text
+    influence_conversation: true
+  imaginative:
+    type: text
+    influence_conversation: true
+  sketch:
+    type: text
+    influence_conversation: true
+  intuition:
+    type: text
+    influence_conversation: true
+  musical:
+    type: text
+    influence_conversation: true
+  originalways:
+    type: text
+    influence_conversation: true
+  fiction:
+    type: text
+    influence_conversation: true
+  verbalabilities:
+    type: text
+    influence_conversation: true
+  friendly:
+    type: text
+    influence_conversation: true
+  helpful:
+    type: text
+    influence_conversation: true
+  idealistic:
+    type: text
+    influence_conversation: true
+  trainothers:
+    type: text
+    influence_conversation: true
+  feelingclearly:
+    type: text
+    influence_conversation: true
+  groupdiscussion:
+    type: text
+    influence_conversation: true
+  interpersonalskills:
+    type: text
+    influence_conversation: true
+  helppeople:
+    type: text
+    influence_conversation: true
+  leadgroups:
+    type: text
+    influence_conversation: true
+  selfconfident:
+    type: text
+    influence_conversation: true
+  asser:
+    type: text
+    influence_conversation: true
+  sociable:
+    type: text
+    influence_conversation: true
+  initiativeprojects:
+    type: text
+    influence_conversation: true
+  thingsyourway:
+    type: text
+    influence_conversation: true
+  promoteideas:
+    type: text
+    influence_conversation: true
+  affectingothers:
+    type: text
+    influence_conversation: true
+  energyordrive:
+    type: text
+    influence_conversation: true
+  speechesortalks:
+    type: text
+    influence_conversation: true
+  detailsandnumbers:
+    type: text
+    influence_conversation: true
+  numbercrunching:
+    type: text
+    influence_conversation: true
+  methodical:
+    type: text
+    influence_conversation: true
+  systemororganisation:
+    type: text
+    influence_conversation: true
+  writereports:
+    type: text
+    influence_conversation: true
+  accuraterecords:
+    type: text
+    influence_conversation: true
+  definedprocedures:
+    type: text
+    influence_conversation: true
+  tablesandgraphs:
+    type: text
+    influence_conversation: true
+  workwithnumbers:
+    type: text
+    influence_conversation: true
 responses:
   utter_greet:
   - text: Hello! I am Otto 🦦 your coach bot 🤖 here to help you be the best version of you.
@@ -208,8 +321,8 @@ responses:
   utter_rules:
   - text: |-
       Ok a few rules. I'm going to ask a few questions each relating to different personality types.
-      For each question that you feels applies to you add a mark.
-      At the end you'll have a mark out of 18 for each personality type.
+      For each question that you feels applies to you answer yes.
+      At the end you'll have a mark out of 9 for each personality type.
       The mark that you score the highest will be the personality type you relate to most.
   utter_realistic:
   - text: |-
@@ -283,158 +396,384 @@ responses:
       themselves as unimaginative or lacking in creativity. The preferred work environment of the conventional type fosters
       organizational competencies, such as record keeping and data management, in a structured operation and places high value
       on conformity and dependability. Typical conventional careers include secretary, accountant and banker.
-  utter_realistic_questions:
-  - text: |-
-      The following questions are for Realistic
-
-      Are you:
-      - practical
-      - athletic
-      - straightforward
-      - mechanically inclined
-      - a nature lover
-      - curious about the physical world?
-      Can you:
-      - fix electrical things
-      - solve mechanical problems
-      - pitch a tent
-      - play a sport
-      - read a blueprint
-      - operate tools and machinery?
-      Do you like to:
-      - tinker with machines
-      - work outdoors
-      - be physically active
-      - work with your hands
-      - build things
-      - work on cars?
-  utter_investigative_questions:
-  - text: |-
-      The following questions are for Investigative
-
-      Are you:
-      - inquisitive
-      - analytical
-      - scientific
-      - observant
-      - logical
-      - precise?
-      Can you:
-      - think abstractly
-      - solve math problems
-      - understand physics theories
-      - do complex calculations
-      - use a microscope
-      - interpret formulas?
-      Do you like to:
-      - explore ideas
-      - use computers
-      - work independently
-      - perform lab experiments
-      - read scientific or technical magazines
-      - analyse data?
-  utter_artistic_questions:
-  - text: |-
-      The following questions are for Artistic
-
-      Are you:
-      - creative
-      - intuitive
-      - imaginative
-      - innovative
-      - sensitive
-      - an individualist?
-      Can you:
-      - sketch, draw, paint
-      - use intuition
-      - play a musical instrument
-      - write stories, poetry, music
-      - develop new ideas, approaches
-      - design fashions or interiors?
-      Do you like to:
-      - solve problems in original ways
-      - read fiction, plays, poetry
-      - use verbal abilities to speak, act, entertain
-      - take photographs
-      - use visualization abilities
-      - express yourself creatively?
-  utter_social_questions:
-  - text: |-
-      The following questions are for Social
-
-      Are you:
-      - friendly
-      - helpful
-      - idealistic
-      - insightful about people
-      - outgoing with others
-      - understanding?
-      Can you:
-      - teach or train others
-      - express your feelings clearly
-      - lead a group discussion
-      - mediate disputes
-      - cooperate well with others
-      - work well in groups or teams?
-      Do You Like To:
-      - use social and interpersonal skills
-      - help people with their problems
-      - lead groups
-      - use communication skills
-      - teach or train others
-      - provide support, empathy?
-  utter_enteprising_questions:
-  - text: |-
-      The following questions are for Enterprising
-
-      Are you:
-      - self-confident
-      - assertive
-      - sociable
-      - persuasive
-      - enthusiastic
-      - energetic?
-      Can you:
-      - initiate projects
-      - convince people to do things
-      your way
-      - sell things or promote ideas
-      - give talks or speeches
-      - organize activities and events
-      - lead a group?
-      Do You Like To:
-      - make decisions affecting others
-      - use energy or drive
-      - give speeches or talks
-      - use skills in argument or debate
-      - take risks
-      - organize and lead others?
-  utter_conventional_questions:
-  - text: |-
-      The following questions are for Conventional
-
-      Are you:
-      - well-organized
-      - accurate with details and numbers
-      - interested in number crunching
-      - methodical
-      - conscientious about facts
-      - efficient?
-      Can you:
-      - work well within an authority
-      system or organization
-      - write reports
-      - keep accurate records
-      - use a computer terminal
-      - perform calculations
-      - gather, organize and report data?
-      Do You Like To:
-      - follow defined procedures
-      - make charts, tables and graphs
-      - work with numbers
-      - type or do word processing
-      - classify and organize information
-      - be responsible for details?
+  utter_ask_practical:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...practical?
+  utter_ask_athletic:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...athletic?
+  utter_ask_straightforward:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...straightforward?
+  utter_ask_mechanicalproblem:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...solve mechanical problems?
+  utter_ask_pitchatent:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...pitch a tent?
+  utter_ask_playsport:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...play a sport?
+  utter_ask_tinkermachine:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Do you like to...tinker with machines?
+  utter_ask_workoutdoor:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Do you like to...work outdoors?
+  utter_ask_physcialactive:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Almost done. Do you like to...be physically active?
+  utter_ask_inquisitive:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...inquisitive?
+  utter_ask_analytical:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...analytical?
+  utter_ask_scientific:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...scientific?
+  utter_ask_abstractly:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...think abstractly?
+  utter_ask_mathproblem:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...solve math problems?
+  utter_ask_physicstheories:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...understand physics theories?
+  utter_ask_exploreidea:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Do you like to...explore ideas?
+  utter_ask_usecomputer:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Do you like to...use computers?
+  utter_ask_workindepen:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Almost done. Do you like to...work independantly?
+  utter_ask_creative:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...creative?
+  utter_ask_intuitive:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...intuitive?
+  utter_ask_imaginative:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...imaginative?
+  utter_ask_sketch:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...sketch, draw, paint?
+  utter_ask_intuition:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...use intuition?
+  utter_ask_musical:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...play a musical instrument?
+  utter_ask_originalways:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Do you like to...solve problems in original ways?
+  utter_ask_fiction:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Do you like to...read fiction, plays, poetry?
+  utter_ask_verbalabilities:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Almost done. Do you like to...use verbal abilities to speak, act, entertain?
+  utter_ask_friendly:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...friendly?
+  utter_ask_helpful:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...helpful?
+  utter_ask_idealistic:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...idealistic?
+  utter_ask_trainothers:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...teach or train others?
+  utter_ask_feelingclearly:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...express my feelings clearly?
+  utter_ask_groupdiscussion:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...lead a group discussion?
+  utter_ask_interpersonalskills:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Do you like to...use your social and interpersonal skills?
+  utter_ask_helppeople:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Do you like to...help people with their problems?
+  utter_ask_leadgroups:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Almost done. Do you like to...lead groups?
+  utter_ask_selfconfident:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...self-confident?
+  utter_ask_asser:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...assertive?
+  utter_ask_sociable:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...sociable?
+  utter_ask_initiativeprojects:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...use initiative projects?
+  utter_ask_thingsyourway:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...convince people to do things your way?
+  utter_ask_promoteideas:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...sell things or promote ideas?
+  utter_ask_affectingothers:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Do you like to...make decisions affecting others?
+  utter_ask_energyordrive:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Do you like to...use energy or drive?
+  utter_ask_speechesortalks:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Almost done. Do you like to...give speeches or talks?
+  utter_ask_detailsandnumbers:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...accurate with details and numbers?
+  utter_ask_numbercrunching:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...interested in number crunching?
+  utter_ask_methodical:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Are you...methodical?
+  utter_ask_systemororganisation:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...work well within an authority, system or organisation?
+  utter_ask_writereports:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...write reports?
+  utter_ask_accuraterecords:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Can you...keep accurate records?
+  utter_ask_definedprocedures:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Do you like to...follow defined procedures?
+  utter_ask_tablesandgraphs:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Do you like to...make charts, tables and graphs?
+  utter_ask_workwithnumbers:
+  - buttons:
+    - payload: yes
+      title: Yes
+    - payload: no
+      title: No
+    text: Almost done. Do you like to...work with numbers?
   utter_ask_score:
   - buttons:
     - payload: /realistic
@@ -479,12 +818,14 @@ responses:
   - text: You haven't given me your name yet.
   utter_already_sub:
   - text: You have already subscribed
-  utter_ask_health_form_sleep:
-  - text: Set yourself a sleep goal 💤 (how many hours would you lke to sleep)?
   utter_ask_health_form_exercise:
   - text: Set your fitness goal 💪 (e.g go gym,run,swim etc.)
+  utter_ask_health_form_sleep:
+  - text: Set yourself a sleep goal 💤 (how many hours would you lke to sleep)?
   utter_ask_health_form_diet:
   - text: Set yourself a food goal 🥦 (e.g eat healthier)
+  utter_ask_health_form_goal:
+  - text: Finally what do you want to accomplish today 🥇 ? (This can be anything)
   utter_q1:
   - buttons:
     - payload: '/quiz{{"quiz_ans": "repeatable"}}'
@@ -528,6 +869,11 @@ responses:
     - payload: /next
       title: Next
     text: Click 'Next' to continue.
+  utter_prompt_finish:
+  - buttons:
+    - payload: /next
+      title: Finish
+    text: Click 'Finish' to find out what you are.
   utter_prompt_begin:
   - buttons:
     - payload: /next
@@ -535,8 +881,6 @@ responses:
     text: Click 'Begin' to start.
   utter_well_done:
   - text: Well Done you have completed today's Quiz ✅
-  utter_ask_health_form_goal:
-  - text: Finally what do you want to accomplish today 🥇 ? (This can be anything)
   utter_slots_value:
   - text: |-
       Here are your goals:
@@ -546,33 +890,16 @@ responses:
        - Today's Goal: {goal}
 actions:
 - action_show_time
+- action_submit_all_forms_calc_score
 - change_name_filled
 - check_name_filled
-- utter_advice
-- utter_artistic
-- utter_artistic_questions
-- utter_ask_name
-- utter_ask_permission
-- utter_ask_score
-- utter_chitchat
-- utter_conventional_questions
-- utter_enteprising_questions
-- utter_greet
-- utter_help
-- utter_investigative_questions
-- utter_name_value
-- utter_out_of_scope
-- utter_realistic_questions
-- utter_six_types
-- utter_social_questions
-- utter_start_message
-- utter_submit
-- validate_email_form
-- validate_name_form
 - check_q1_filled
 - check_q2_filled
 - check_q3_filled
 - check_q4_filled
+- validate_email_form
+- validate_health_form
+- validate_name_form
 forms:
   name_form:
     required_slots:
@@ -596,13 +923,324 @@ forms:
       exercise:
       - entity: exercise
         type: from_entity
-      goal:
-      - intent: inform
-        type: from_text
       sleep:
       - entity: sleep
         type: from_entity
       - intent: deny
         type: from_intent
         value: None
-e2e_actions: []
+      goal:
+      - intent: inform
+        type: from_text
+  realistic_form:
+    ignored_intents:
+    - greet
+    - mood_great
+    - goodbye
+    - mood_unhappy
+    required_slots:
+      practical:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      athletic:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      straightforward:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      mechanicalproblem:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      pitchatent:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      playsport:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      tinkermachine:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      workoutdoor:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      physcialactive:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+  investigative_form:
+    ignored_intents:
+    - greet
+    - mood_great
+    - goodbye
+    - mood_unhappy
+    required_slots:
+      inquisitive:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      analytical:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      scientific:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      abstractly:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      mathproblem:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      physicstheories:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      exploreidea:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      usecomputer:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      workindepen:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+  artistic_form:
+    ignored_intents:
+    - greet
+    - mood_great
+    - goodbye
+    - mood_unhappy
+    required_slots:
+      creative:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      intuitive:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      imaginative:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      sketch:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      intuition:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      musical:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      originalways:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      fiction:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      verbalabilities:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+  social_form:
+    ignored_intents:
+    - greet
+    - mood_great
+    - goodbye
+    - mood_unhappy
+    required_slots:
+      friendly:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      helpful:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      idealistic:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      trainothers:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      feelingclearly:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      groupdiscussion:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      interpersonalskills:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      helppeople:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      leadgroups:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+  enterprising_form:
+    ignored_intents:
+    - greet
+    - mood_great
+    - goodbye
+    - mood_unhappy
+    required_slots:
+      selfconfident:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      asser:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      sociable:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      initiativeprojects:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      thingsyourway:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      promoteideas:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      affectingothers:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      energyordrive:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      speechesortalks:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+  conventional_form:
+    ignored_intents:
+    - greet
+    - mood_great
+    - goodbye
+    - mood_unhappy
+    required_slots:
+      detailsandnumbers:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      numbercrunching:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      methodical:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      systemororganisation:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      writereports:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      accuraterecords:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      definedprocedures:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      tablesandgraphs:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
+      workwithnumbers:
+      - type: from_text
+        intent:
+        - affirm
+        - deny
