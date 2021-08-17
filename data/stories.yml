@@ -774,3 +774,4 @@ stories:
   - intent: next
   - action: action_submit_all_forms_calc_score
   - action: utter_work_today
+

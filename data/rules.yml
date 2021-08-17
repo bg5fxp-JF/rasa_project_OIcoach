@@ -56,4 +56,3 @@ rules:
   - action: utter_slots_value
   - action: action_restart
 
-
