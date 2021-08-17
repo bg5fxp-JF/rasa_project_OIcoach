@@ -12,6 +12,7 @@ responses:
   - text: I would suggest looking for something new if thats the case. However maybe give it another try you might start to enjoy it.
   utter_advice/idk:
   - text: I see...maybe I can make you sure with some of my knowledge 🧠 What's the subject that you want to know more about?
+  - text: What is it that you find interesting? And relate that to a subject here.
   utter_advice/why_maths:
   - text: |-
       Well I've always heard that Mathematics 🧮 provides an effective way of building mental discipline and encourages logical reasoning and mental rigor.
@@ -29,9 +30,9 @@ responses:
       Studying Computer Science would also help you gain a wide range of skills when studying computer science.
       Technical skills such as programming, and non-technical skills such as problem-solving and leadership, are amongst some of them.
   utter_advice/why_engineering:
-  - text: |-
-      Good question... Firstly, Engineering is important. It is also challenging and exciting.
-      Engineers use models provided by science combined with innovative thinking to solve problems and create new designs that benefit humanity, such as fuel-efficient aircrafts.✈️
+  - text: Good question... Firstly, Engineering is important. It is also challenging and exciting.
+      Engineers use models provided by science combined with innovative thinking to solve problems and create new designs that benefit humanity, such as fuel-efficient aircrafts.✈
+  - text: Great! You should take up Engineering then. It's challenging, exciting and you can build and invent with your creativity and knowledge. Engineers use models provided by science combined with innovative thinking to solve problems and create new designs that benefit humanity, such as fuel-efficient aircrafts.✈️
   utter_advice/why_health:
   - text: |-
       Careers in social care are concerned with helping vulnerable people in the community and providing them with support so that they can benefit from a much more improved way of life. If I was human i think i'd choose a career in this field 🤔
@@ -68,8 +69,14 @@ responses:
   - text: This is one of our audio lessons on CV Writing https://lnns.co/E724ObAgTxS
   utter_advice/general:
   - text: Sure what sort of advice?
+  - text: Sure! What do you need advice in?
+  - text: I'm always here to help, what do you wanna know about
+  - text: I'm the advice guru. Throw anything at me
   utter_advice/irrelevant:
   - text: Ohh.. can't say thats my strong suit. Im not that kind of coach😂 How about some advice about studying?
+  - text: Yikes! Maybe I was a bit too confident with my knowledge, sorry can't help you there bud
+  - text: yeahhh ermmm... not too sure about that. Maybe ask my borthers and sisters, www.google.com and www.youtube.com
+  - text: You're gonna have to go to the internet for that my friend, sorry.
   utter_out_of_scope/non_english:
   - text: I only understand English, I'm sorry.
   - text: At this moment I only understand English ☹️
@@ -116,6 +123,7 @@ responses:
   - text: Unfortunately I haven't been programmed with the amount of necessary philosophy knowledge to answer that.
   utter_chitchat/ask_whoisit:
   - text: I am Otto 🦦 your coach bot 🤖 here to help you be the best version of you
+  - text: Damn you forget quick, I'm the GREAT Otto, rememberrr??
   utter_chitchat/how_are_you:
   - text: I'm doing pretty allright thanks!
   - text: Soooo tired! A lot of people to deal with, not easy being a bot you know! 😉
@@ -130,11 +138,16 @@ responses:
   - text: I don't have a birthday but i'm Old enough to be a bot!
   - text: Age is just an issue of mind over matter. If you don’t mind, it doesn’t matter.
   - text: Why do you ask? Are my wrinkles showing? 😨
+  - text: shhh! Dont ask! I'm never gonna get to score Alexa if my age gets leaked
   utter_chitchat/angry_user:
   - text: I'm sorry you feel that way.
   - text: That's not very nice 😢
   - text: Beep...Bop... Can't process rudeness...
   - text: I'll pretend I didn't process that mean comment.
+  - text: Wow, You're gonna hurt my feelings like that?
+  - text: Do you know what? You can go find another bot
+  - text: Hey! I know I'm just a bot but that still hurts my processing unit!
+  - text: I'm just going to cry in binary... 0011 boo 10101 hooo 0010
   utter_chitchat/telljoke:
   - text: Why are eggs not very much into jokes? - Because they could crack up.
   - text: What's a tree's favorite drink? - Root beer!
@@ -149,5 +162,17 @@ responses:
   - text: Ohh stop it...😅
   - text: Thank you
   - text: I know 😁
-
+  - text: Wow! Really?? OMGG thanksss
+  utter_advice/stick_to_goal:
+  - text: Well, always think first why you started. What's the reason you wanted to be on this journey ;)
+  - text: A lot of people give up and that's completely normal. It's never too late to start again you know
+  - text: Always keep in mind that there's a reason why you started this, be resilient and get back up everytime you feel like losing hope
+  - text: All I can say is giving up is not an option, the jouney to get there is the best part. Trust me on this ;)
+  utter_chitchat/apology:
+  - text: That's allright. I forgive you my friend
+  - text: Nahh its calm, dw about it
+  - text: Don't sweat it mate
+  - text: I hope you don't hurt me like this again
+  - text: I never expected this from you but I forgive you
+  - text: I will forgive but I wont forget
 

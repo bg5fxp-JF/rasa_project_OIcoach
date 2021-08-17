@@ -1,41 +1,70 @@
 version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- inform
-- deny
-- next
-- greet
-- affirm
+- inform:
+    use_entities: true
+- deny:
+    use_entities: true
+- next:
+    use_entities: true
+- greet:
+    use_entities: true
+- affirm:
+    use_entities: true
 - out_of_scope:
-    is_retrieval_intent: true
+    use_entities: true
 - chitchat:
-    is_retrieval_intent: true
+    use_entities: true
 - advice:
-    is_retrieval_intent: true
-- request_names
-- give_time
-- subscribe_to_updates
-- thankyou
-- read_write_learner
-- ask_learning_type
-- find_personality_type
-- need_help
-- realistic
-- investigative
-- artistic
-- social
-- enterprising
-- conventional
-- ask_course
-- goodbye
-- mood_great
-- mood_unhappy
-- set_goals
-- quiz
-- want_quiz
-- nlu_fallback
+    use_entities: true
+- request_names:
+    use_entities: true
+- give_time:
+    use_entities: true
+- subscribe_to_updates:
+    use_entities: true
+- thankyou:
+    use_entities: true
+- read_write_learner:
+    use_entities: true
+- ask_learning_type:
+    use_entities: true
+- find_personality_type:
+    use_entities: true
+- need_help:
+    use_entities: true
+- realistic:
+    use_entities: true
+- investigative:
+    use_entities: true
+- artistic:
+    use_entities: true
+- social:
+    use_entities: true
+- enterprising:
+    use_entities: true
+- conventional:
+    use_entities: true
+- ask_course:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- set_goals:
+    use_entities: true
+- quiz:
+    use_entities: true
+- want_quiz:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
 entities:
 - email
 - exercise
@@ -45,196 +74,324 @@ entities:
 - stress
 slots:
   quiz_ans:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   first_name:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   email:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   requested_slot:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   confirm_exercise:
-    type: bool
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   exercise:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   sleep:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   diet:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   stress:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   goal:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
   practical:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   athletic:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   straightforward:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   mechanicalproblem:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   pitchatent:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   playsport:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   tinkermachine:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   workoutdoor:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   physcialactive:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   inquisitive:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   analytical:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   scientific:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   abstractly:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   mathproblem:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   physicstheories:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   exploreidea:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   usecomputer:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   workindepen:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   creative:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   intuitive:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   imaginative:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   sketch:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   intuition:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   musical:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   originalways:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   fiction:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   verbalabilities:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   friendly:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   helpful:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   idealistic:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   trainothers:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   feelingclearly:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   groupdiscussion:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   interpersonalskills:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   helppeople:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   leadgroups:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   selfconfident:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   asser:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   sociable:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   initiativeprojects:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   thingsyourway:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   promoteideas:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   affectingothers:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   energyordrive:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   speechesortalks:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   detailsandnumbers:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   numbercrunching:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   methodical:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   systemororganisation:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   writereports:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   accuraterecords:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   definedprocedures:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   tablesandgraphs:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   workwithnumbers:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
 responses:
   utter_greet:
@@ -923,15 +1080,15 @@ forms:
       exercise:
       - entity: exercise
         type: from_entity
+      goal:
+      - intent: inform
+        type: from_text
       sleep:
       - entity: sleep
         type: from_entity
       - intent: deny
         type: from_intent
         value: None
-      goal:
-      - intent: inform
-        type: from_text
   realistic_form:
     ignored_intents:
     - greet
@@ -939,51 +1096,51 @@ forms:
     - goodbye
     - mood_unhappy
     required_slots:
-      practical:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
       athletic:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
-      straightforward:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
+        type: from_text
       mechanicalproblem:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
-      pitchatent:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      playsport:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      tinkermachine:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      workoutdoor:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
+        type: from_text
       physcialactive:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
+      pitchatent:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      playsport:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      practical:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      straightforward:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      tinkermachine:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      workoutdoor:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
   investigative_form:
     ignored_intents:
     - greet
@@ -991,51 +1148,51 @@ forms:
     - goodbye
     - mood_unhappy
     required_slots:
-      inquisitive:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      analytical:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      scientific:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
       abstractly:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
-      mathproblem:
-      - type: from_text
-        intent:
+        type: from_text
+      analytical:
+      - intent:
         - affirm
         - deny
-      physicstheories:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
+        type: from_text
       exploreidea:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
+      inquisitive:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      mathproblem:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      physicstheories:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      scientific:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
       usecomputer:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
       workindepen:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
   artistic_form:
     ignored_intents:
     - greet
@@ -1044,50 +1201,50 @@ forms:
     - mood_unhappy
     required_slots:
       creative:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
-      intuitive:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      imaginative:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      sketch:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      intuition:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      musical:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      originalways:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
+        type: from_text
       fiction:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
+      imaginative:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      intuition:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      intuitive:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      musical:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      originalways:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      sketch:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
       verbalabilities:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
   social_form:
     ignored_intents:
     - greet
@@ -1095,51 +1252,51 @@ forms:
     - goodbye
     - mood_unhappy
     required_slots:
-      friendly:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      helpful:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      idealistic:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      trainothers:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
       feelingclearly:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
+      friendly:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
       groupdiscussion:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
-      interpersonalskills:
-      - type: from_text
-        intent:
+        type: from_text
+      helpful:
+      - intent:
         - affirm
         - deny
+        type: from_text
       helppeople:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
+      idealistic:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      interpersonalskills:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
       leadgroups:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
+      trainothers:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
   enterprising_form:
     ignored_intents:
     - greet
@@ -1147,51 +1304,51 @@ forms:
     - goodbye
     - mood_unhappy
     required_slots:
-      selfconfident:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      asser:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      sociable:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      initiativeprojects:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      thingsyourway:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      promoteideas:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
       affectingothers:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
+      asser:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
       energyordrive:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
+      initiativeprojects:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      promoteideas:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      selfconfident:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      sociable:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
       speechesortalks:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
+      thingsyourway:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
   conventional_form:
     ignored_intents:
     - greet
@@ -1199,48 +1356,49 @@ forms:
     - goodbye
     - mood_unhappy
     required_slots:
-      detailsandnumbers:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      numbercrunching:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      methodical:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      systemororganisation:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
-      writereports:
-      - type: from_text
-        intent:
-        - affirm
-        - deny
       accuraterecords:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
       definedprocedures:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
+      detailsandnumbers:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      methodical:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      numbercrunching:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+      systemororganisation:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
       tablesandgraphs:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
       workwithnumbers:
-      - type: from_text
-        intent:
+      - intent:
         - affirm
         - deny
+        type: from_text
+      writereports:
+      - intent:
+        - affirm
+        - deny
+        type: from_text
+e2e_actions: []

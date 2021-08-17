@@ -116,9 +116,9 @@ nlu:
     - shoul i take maths
     - should i try find a maths course
     - Is math needed for the future
+    - I love solving complex math problems
 - intent: advice/why_art
   examples: |
-    - i'm thinking of studying maths, is that a good idea?
     - Why should i study arts and humanities?
     - is Arts & Humanities a good subject to study
     - is it a good idea to study maths
@@ -127,6 +127,8 @@ nlu:
     - are arts needed for the future
     - can i hear more about art
     - can you tell me something about art
+    - I've always been good at Art
+    - I can actually draw really well, do you think I should go for Arts and Humanities?
 - intent: advice/why_business
   examples: |
     - i'm thinking of studying Business, is that a good idea?
@@ -138,6 +140,8 @@ nlu:
     - Is Business needed for the future
     - can i hear more about business
     - can you tell me something about business
+    - I always wanted to be a successful businessman
+    - I wanna go where the money is babyy
 - intent: advice/why_compsci
   examples: |
     - i'm thinking of studying Computer Science, is that a good idea?
@@ -149,6 +153,8 @@ nlu:
     - Is Computer Science needed for the future
     - can i hear more about computer science
     - can you tell me something about computer science
+    - Well I was always fascinated by technology
+    - I do fancy learning about techy stuff
 - intent: advice/why_engineering
   examples: |
     - i'm thinking of studying Engineering, is that a good idea?
@@ -160,6 +166,9 @@ nlu:
     - Is Engineering needed for the future
     - can i hear more about engineering
     - can you tell me something about engineering
+    - I always had a passion in building things, I should go for Engineering right?
+    - I love the idea of inventions, maybe I should go for engineering no?
+    - I always wanted to invent something when I grew up
 - intent: advice/why_health
   examples: |
     - i'm thinking of studying health, is that a good idea?
@@ -195,6 +204,15 @@ nlu:
     - i do like studying Personal Development
     - i do like studying Mathematics
     - i do like studying Social Science
+    - hmm Arts & Humanities does sound interesting
+    - hmm Business does sound interesting
+    - hmm Computer Science does sound interesting
+    - hmm Engineering & Science does sound interesting
+    - hmm Health does sound interesting
+    - hmm maths does sound interesting
+    - hmm Personal Development does sound interesting
+    - hmm Mathematics does sound interesting
+    - hmm Social Science does sound interesting
 - intent: advice/deny
   examples: |
     - incorrect i don't enjoy that subject
@@ -218,3 +236,13 @@ nlu:
     - i think so
     - don't really know
     - no idea
+    - I'm not too sure tbh
+- intent: advice/stick_to_goal
+  examples: |
+    - But how would I stick to my goals?
+    - How can I stay dedicated?
+    - I always lose motivation, help me
+    - I never stick to my goals, I need help
+    - I give up too easily
+    - I can't stay dedicated for too long
+

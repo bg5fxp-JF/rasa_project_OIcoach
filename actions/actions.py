@@ -295,7 +295,6 @@ class CalculateJobForm(Action):
         friendly = tracker.get_slot("friendly")
         helpful = tracker.get_slot("helpful")
         idealistic = tracker.get_slot("idealistic")
-        insightful = tracker.get_slot("insightful")
         trainothers = tracker.get_slot("trainothers")
         feelingclearly = tracker.get_slot("feelingclearly")
         groupdiscussion = tracker.get_slot("groupdiscussion")
@@ -385,8 +384,6 @@ class CalculateJobForm(Action):
         if helpful == "yes":
             social_count = social_count + 1
         if idealistic == "yes":
-            social_count = social_count + 1
-        if insightful == "yes":
             social_count = social_count + 1
         if trainothers == "yes":
             social_count = social_count + 1

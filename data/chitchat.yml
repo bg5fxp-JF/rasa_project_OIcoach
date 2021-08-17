@@ -570,6 +570,13 @@ nlu:
     - wow what a stupid bot
     - silly bot
     - Such a useless bot
+    - You stupid bot
+    - Dumbass bot
+    - Bruv you're so shit
+    - fuck off
+    - go fuck yourself
+    - fuck you
+    - Na I'm joking you really are a shit bot
 - intent: chitchat/telljoke
   examples: |
     - can you tell me a joke?
@@ -609,4 +616,14 @@ nlu:
     - lool you are funnYY
     - LOL so funny
     - LoL 😂
-    - you ae cool
+    - you are so cool
+- intent: chitchat/apology
+  examples: |
+    - I'm sorry
+    - Forgive me
+    - I apologise
+    - I didn't mean to say that I'm sorry mate
+    - Please fogive me Otto
+    - I shouldn't have been so rude, sorry for that
+    - Where are my manners
+
