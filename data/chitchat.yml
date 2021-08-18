@@ -1,5 +1,53 @@
 version: "2.0"
 nlu:
+- intent: chitchat/explain
+  examples: |
+    - Well because it just isnt
+    - because im more of a freindly person
+    - because i know what thats about and its nothing like that
+    - because that just aint right
+    - because no
+    - beacuse im not like that
+    - beacuse im not idealistic
+    - because i don't really relate to that
+    - because i said so
+    - because i just do
+    - as i dont agree
+    - as it doesn't make sense
+    - i don't relate, thats why
+    - i don't relate
+    - I dont want to explain
+    - I dont need to explain anything to you
+    - i don't want to
+- intent: chitchat/agree
+  examples: |
+    - yeah i agree with you
+    - that sounds about right
+    - wow thats actually spot on
+    - yes i agree
+    - thats exactly me!
+    - you bet thats me
+    - im exctly like that
+    - that is so accurate
+    - thats right
+    - correct
+    - 👍
+    - very accurate
+- intent: chitchat/disagree
+  examples: |
+    - yeah i disagree with you there
+    - that sounds wrong
+    - that doesnt sound right
+    - nope gonna have to disagree with you there
+    - i dont think thats me
+    - thats nothing like me
+    - you could'nt be more wrong
+    - you are wrong
+    - thats incorrect
+    - not right
+    - 👎
+    - that is so inaccurate
+    - very inaccurate
 - intent: chitchat/ask_howbuilt
   examples: |
     - By what means were you made?
@@ -570,6 +618,11 @@ nlu:
     - wow what a stupid bot
     - silly bot
     - Such a useless bot
+    - Bruv you're so shit
+    - fuck off
+    - go fuck yourself
+    - fuck you
+    - Na I'm joking you really are a shit bot
 - intent: chitchat/telljoke
   examples: |
     - can you tell me a joke?
@@ -589,7 +642,6 @@ nlu:
     - wow you made me laugh
     - wow you are funny
     - you are actually funny
-    - hahahah looool
     - you cool
     - so cool
     - too cool
@@ -598,6 +650,19 @@ nlu:
     - what a cool bot
     - such nice bot
     - wow you're amazing
+    - loool you are funnYY
+    - LOL so funny
+    - you ae cool
+    - yes i did notice actually
+    - your a good coach
+    - you are a good coah to me
+    - you are the best
+    - nahh don't worry im sure she likes you
+    - you are good
+    - nah you good
+    - im sure you are amazing
+- intent: chitchat/laugh
+  examples: |
     - 🤣🤣🤣🤣🤣
     - 🤣
     - 😂😂😂
@@ -606,8 +671,28 @@ nlu:
     - lmaoooo
     - lmao
     - loooool
-    - lool you are funnYY
-    - LOL so funny
     - LoL 😂
-    - you ae cool
-
+    - hahahah
+    - haha
+    - teehee
+    - hee hee
+    - laughing
+    - hahahah looool
+- intent: chitchat/apology
+  examples: |
+    - I'm sorry
+    - Forgive me
+    - I apologise
+    - I didn't mean to say that I'm sorry mate
+    - Please fogive me Otto
+    - I shouldn't have been so rude, sorry for that
+    - Where are my manners
+    - oops sorry to hear that
+    - sorry didn't mean that
+    - sorry touchy subject i see
+    - ahh didn't mean that
+    - soryyyyy
+    - oh no sorry to hear that
+    - SORRRYYR
+    - SORRY
+    - sorrrryyy

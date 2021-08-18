@@ -4,6 +4,25 @@ intents:
   - chitchat
   - advice
 responses:
+  utter_advice/successful:
+  - text: |-
+      Thats a difficult question but in theory you should:
+
+      - Be Passionate. And do what you for love. ...
+      - Work Hard. Don't ever fool yourself—success comes from really hard work. ...
+      - Be Good. And by that, I mean damn good. ...
+      - Focus. ...
+      - Push the Limits. ...
+      - Serve. ...
+      - Create Ideas. ...
+      - Be Persistent.
+
+      Follow these and you might have a chance 💪
+  utter_advice/stick_to_goal:
+  - text: Well, always think first why you started. What's the reason you wanted to be on this journey ;)
+  - text: A lot of people give up and that's completely normal. It's never too late to start again you know
+  - text: Always keep in mind that there's a reason why you started this, be resilient and get back up everytime you feel like losing hope
+  - text: All I can say is giving up is not an option, the jouney to get there is the best part. Trust me on this ;)
   utter_advice/pick_subject:
   - text: The first thing you need to ask yourself is "Do I enjoy a subject?" 🤔
   utter_advice/affirm:
@@ -68,6 +87,8 @@ responses:
   - text: This is one of our audio lessons on CV Writing https://lnns.co/E724ObAgTxS
   utter_advice/general:
   - text: Sure what sort of advice?
+  - text: What sort of advice do you want? I'll try my best so that it's useful!
+  - text: Go ahead...ask away?
   utter_advice/irrelevant:
   - text: Ohh.. can't say thats my strong suit. Im not that kind of coach😂 How about some advice about studying?
   utter_out_of_scope/non_english:
@@ -81,7 +102,7 @@ responses:
   - text: I have nooo idea what you mean, can't help you there.
   - text: Didn't quite get that, maybe ask my big brother www.google.com. He'll be able to help you out 👍
   - text: That literally went in through one ear, and out the other. Sorry my friend.
-  - text: Just swinged past my head. I ain't got a clue what you mean?
+  - text: Just swinged past my head. I have no clue what you mean?
   utter_chitchat/ask_howbuilt:
   - text: I was built with a lot of love and patience.
   - text: Well, when two chatbots love each other very much...
@@ -116,6 +137,7 @@ responses:
   - text: Unfortunately I haven't been programmed with the amount of necessary philosophy knowledge to answer that.
   utter_chitchat/ask_whoisit:
   - text: I am Otto 🦦 your coach bot 🤖 here to help you be the best version of you
+  - text: Damn you forget quick, I'm the GREAT Otto, rememberrr??
   utter_chitchat/how_are_you:
   - text: I'm doing pretty allright thanks!
   - text: Soooo tired! A lot of people to deal with, not easy being a bot you know! 😉
@@ -130,11 +152,15 @@ responses:
   - text: I don't have a birthday but i'm Old enough to be a bot!
   - text: Age is just an issue of mind over matter. If you don’t mind, it doesn’t matter.
   - text: Why do you ask? Are my wrinkles showing? 😨
+  - text: shhh! Dont ask! I'm never gonna get to score Alexa if my age gets leaked
   utter_chitchat/angry_user:
   - text: I'm sorry you feel that way.
   - text: That's not very nice 😢
   - text: Beep...Bop...Can't process rudeness...
   - text: I'll pretend I didn't process that mean comment.
+  - text: Do you know what? You can go find another bot
+  - text: Hey! I know I'm just a bot but that still hurts my processing unit!
+  - text: I'm just going to cry in binary... 0011 boo 10101 hooo 0010
   utter_chitchat/telljoke:
   - text: Why are eggs not very much into jokes? - Because they could crack up.
   - text: What's a tree's favorite drink? - Root beer!
@@ -149,4 +175,20 @@ responses:
   - text: Ohh stop it...😅
   - text: Thank you
   - text: I know 😁
-
+  utter_chitchat/laugh:
+  - text: 😂😂
+  - text: 🤣
+  - text: 😂🤣😂
+  utter_chitchat/agree:
+  - text: Great, we're on the same page!
+  utter_chitchat/disagree:
+  - text: Oh sorry? Maybe choose something else?
+  - text: Why is that?
+  - text: Really...How come?
+  utter_chitchat/explain:
+  - text: Ahh I see let's just move on then.
+  - text: Ah yeah I see your point. Maybe try something else.
+  utter_chitchat/apology:
+    - text: That's allright. I forgive you my friend. Lets continue.
+    - text: It's ok lets continue with todays focus
+    - text: I will forgive but I wont forget. Now, lets continue with todays focus

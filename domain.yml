@@ -287,6 +287,8 @@ responses:
       title: Search For Courses
     - payload: /find_personality_type
       title: Find out about Holland's 6 Personality types
+    - paylod: general advice
+      title: Some Advice
     text: "Here's somethings I can offer:"
   utter_six_types:
   - buttons:
