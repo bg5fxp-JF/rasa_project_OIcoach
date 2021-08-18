@@ -157,6 +157,8 @@ nlu:
     - can you tell me something about business
     - I always wanted to be a successful businessman
     - I wanna go where the money is babyy
+    - i wunna go where the money is
+    - Take me where the money is
 - intent: advice/why_compsci
   examples: |
     - i'm thinking of studying Computer Science, is that a good idea?
@@ -260,3 +262,4 @@ nlu:
     - I never stick to my goals, I need help
     - I give up too easily
     - I can't stay dedicated for too long
+    - Its too hard. I can't stay focused
