@@ -75,13 +75,13 @@ responses:
   - text: At this moment I only understand English ☹️
   utter_out_of_scope/other:
   - text: I can't help you with that, I'm sorry.
-  - text: Sorry, I can't handle that request.
+  - text: Sorry, I can't handle that request. Can you rephrase?
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
-  - text: Sorry, can't help you there lol, I'm only a bot
-  - text: I have nooo idea what you mean, can't help you there mate.
-  - text: Nahh too much for me, ask my big brother www.google.com He'll be able to help you out
-  - text: That literally went through one of my ear and out the other,sorry my friend
-  - text: Just swinged past my head. I ain't got a clue what you mean
+  - text: Sorry, can't help you there lol, I'm only a bot.
+  - text: I have nooo idea what you mean, can't help you there.
+  - text: Didn't quite get that, maybe ask my big brother www.google.com. He'll be able to help you out 👍
+  - text: That literally went in through one ear, and out the other. Sorry my friend.
+  - text: Just swinged past my head. I ain't got a clue what you mean?
   utter_chitchat/ask_howbuilt:
   - text: I was built with a lot of love and patience.
   - text: Well, when two chatbots love each other very much...
@@ -133,7 +133,7 @@ responses:
   utter_chitchat/angry_user:
   - text: I'm sorry you feel that way.
   - text: That's not very nice 😢
-  - text: Beep...Bop... Can't process rudeness...
+  - text: Beep...Bop...Can't process rudeness...
   - text: I'll pretend I didn't process that mean comment.
   utter_chitchat/telljoke:
   - text: Why are eggs not very much into jokes? - Because they could crack up.

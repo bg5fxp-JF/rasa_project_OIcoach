@@ -6,6 +6,7 @@ rules:
   steps:
   - intent: goodbye
   - action: utter_goodbye
+  - action: action_restart
 
 - rule: reply to whenever user says thank you
   steps:
@@ -54,5 +55,4 @@ rules:
   - action: health_form
   - active_loop: null
   - action: utter_slots_value
-  - action: action_restart
 
