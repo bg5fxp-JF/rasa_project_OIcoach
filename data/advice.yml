@@ -96,6 +96,7 @@ nlu:
     - general advice
 - intent: advice/irrelevant
   examples: |
+    - why do i have no freinds
     - I need love advice
     - i need advice on becoming king
     - Advice for getting married

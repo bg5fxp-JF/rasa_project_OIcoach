@@ -39,7 +39,6 @@ stories:
   - intent: ask_course
   - action: utter_inform_course
 
-
 - story: path about time
   steps:
   - intent: give_time
