@@ -15,8 +15,8 @@ rules:
 
 - rule: whenever user needs a reminder of what is offered
   steps:
-    - intent: need_help
-    - action: utter_help
+  - intent: need_help
+  - action: utter_help
 
 - rule: deny ask name
   steps:
@@ -30,7 +30,6 @@ rules:
   steps:
   - intent: nlu_fallback
   - action: utter_out_of_scope
-
 
 - rule: chitchat
   steps:

@@ -39,6 +39,11 @@ stories:
   - intent: ask_course
   - action: utter_inform_course
 
+- story: whenever user needs a reminder of what is offered
+  steps:
+  - intent: need_help
+  - action: utter_help
+
 - story: path about time
   steps:
   - intent: give_time
